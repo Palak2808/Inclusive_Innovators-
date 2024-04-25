@@ -13,6 +13,16 @@
 		3F6CD85F2BD789590080A0D8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD85E2BD789590080A0D8 /* Base */; };
 		3F6CD8612BD7895B0080A0D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */; };
 		3F6CD8642BD7895B0080A0D8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD8632BD7895B0080A0D8 /* Base */; };
+		3F99E6942BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */; };
+		3FBCC1412BDA38E400744372 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1402BDA38E400744372 /* ListItem.swift */; };
+		3FBCC1432BDA39A700744372 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1422BDA39A700744372 /* MockData.swift */; };
+		3FBCC1452BDA39DC00744372 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1442BDA39DC00744372 /* ListSection.swift */; };
+		3FC3CFF62BDA6D5B0031604C /* PlannedCourseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3CFF52BDA6D5A0031604C /* PlannedCourseCollectionViewController.swift */; };
+		3FDE72F52BDA42CF003CC57C /* LibraryStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */; };
+		3FDE72F92BDA4553003CC57C /* JounalStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72F82BDA4553003CC57C /* JounalStructures.swift */; };
+		3FDE72FD2BDA4A05003CC57C /* profileStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */; };
+		3FDE72FF2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */; };
+		3FDE73012BDA5ADE003CC57C /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6CD8632BD7895B0080A0D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6CD8652BD7895B0080A0D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedCourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FBCC1402BDA38E400744372 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		3FBCC1422BDA39A700744372 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		3FBCC1442BDA39DC00744372 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
+		3FC3CFF52BDA6D5A0031604C /* PlannedCourseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlannedCourseCollectionViewController.swift; path = ../../../../../.Trash/PlannedCourseCollectionViewController.swift; sourceTree = "<group>"; };
+		3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStructures.swift; sourceTree = "<group>"; };
+		3FDE72F82BDA4553003CC57C /* JounalStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JounalStructures.swift; sourceTree = "<group>"; };
+		3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileStructures.swift; sourceTree = "<group>"; };
+		3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,10 @@
 		3F6CD8562BD789590080A0D8 /* FaceFlex */ = {
 			isa = PBXGroup;
 			children = (
+				3FDE72FB2BDA460B003CC57C /* Profile */,
+				3FDE72F72BDA453D003CC57C /* Journal */,
+				3F8AD9CD2BDA2F1F00D569EE /* Home */,
+				3F8AD9CC2BDA2F1100D569EE /* Library */,
 				3F6CD8572BD789590080A0D8 /* AppDelegate.swift */,
 				3F6CD8592BD789590080A0D8 /* SceneDelegate.swift */,
 				3F6CD85B2BD789590080A0D8 /* ViewController.swift */,
@@ -65,6 +89,44 @@
 				3F6CD8652BD7895B0080A0D8 /* Info.plist */,
 			);
 			path = FaceFlex;
+			sourceTree = "<group>";
+		};
+		3F8AD9CC2BDA2F1100D569EE /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */,
+				3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */,
+				3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		3F8AD9CD2BDA2F1F00D569EE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3FC3CFF52BDA6D5A0031604C /* PlannedCourseCollectionViewController.swift */,
+				3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */,
+				3FBCC1402BDA38E400744372 /* ListItem.swift */,
+				3FBCC1422BDA39A700744372 /* MockData.swift */,
+				3FBCC1442BDA39DC00744372 /* ListSection.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3FDE72F72BDA453D003CC57C /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				3FDE72F82BDA4553003CC57C /* JounalStructures.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		3FDE72FB2BDA460B003CC57C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +200,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDE72F52BDA42CF003CC57C /* LibraryStructures.swift in Sources */,
+				3FDE73012BDA5ADE003CC57C /* WorkoutsViewController.swift in Sources */,
+				3FDE72F92BDA4553003CC57C /* JounalStructures.swift in Sources */,
+				3FDE72FD2BDA4A05003CC57C /* profileStructures.swift in Sources */,
+				3FDE72FF2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift in Sources */,
 				3F6CD85C2BD789590080A0D8 /* ViewController.swift in Sources */,
+				3FBCC1412BDA38E400744372 /* ListItem.swift in Sources */,
 				3F6CD8582BD789590080A0D8 /* AppDelegate.swift in Sources */,
+				3F99E6942BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift in Sources */,
+				3FBCC1452BDA39DC00744372 /* ListSection.swift in Sources */,
+				3FC3CFF62BDA6D5B0031604C /* PlannedCourseCollectionViewController.swift in Sources */,
+				3FBCC1432BDA39A700744372 /* MockData.swift in Sources */,
 				3F6CD85A2BD789590080A0D8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
