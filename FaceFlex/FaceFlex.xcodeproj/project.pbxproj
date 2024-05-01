@@ -7,25 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F16D1C02BE2568300E3BB73 /* JourWriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */; };
+		3F4183B22BE0FBAB003DD71B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4183B12BE0FBAB003DD71B /* ArticleTableViewCell.swift */; };
+		3F4297452BE1FB6A00510CAD /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3F4297442BE1FB6A00510CAD /* FSCalendar */; };
+		3F4C71082BE11B7A0028F87E /* MomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */; };
 		3F6CD8582BD789590080A0D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD8572BD789590080A0D8 /* AppDelegate.swift */; };
 		3F6CD85A2BD789590080A0D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD8592BD789590080A0D8 /* SceneDelegate.swift */; };
 		3F6CD85C2BD789590080A0D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD85B2BD789590080A0D8 /* ViewController.swift */; };
 		3F6CD85F2BD789590080A0D8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD85E2BD789590080A0D8 /* Base */; };
 		3F6CD8612BD7895B0080A0D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */; };
 		3F6CD8642BD7895B0080A0D8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD8632BD7895B0080A0D8 /* Base */; };
+		3F97B6582BDB822D0065207E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97B6572BDB822D0065207E /* ProfileViewController.swift */; };
 		3F99E6942BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */; };
-		3FBCC1412BDA38E400744372 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1402BDA38E400744372 /* ListItem.swift */; };
-		3FBCC1432BDA39A700744372 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1422BDA39A700744372 /* MockData.swift */; };
-		3FBCC1452BDA39DC00744372 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1442BDA39DC00744372 /* ListSection.swift */; };
-		3FC3CFF62BDA6D5B0031604C /* PlannedCourseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3CFF52BDA6D5A0031604C /* PlannedCourseCollectionViewController.swift */; };
+		3FBCC1412BDA38E400744372 /* HomeStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1402BDA38E400744372 /* HomeStructure.swift */; };
+		3FBD58212BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD58202BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift */; };
+		3FC8BDFA2BE0A8610045EABF /* JournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8BDF92BE0A8610045EABF /* JournalCollectionViewCell.swift */; };
+		3FC8BDFC2BE0A86F0045EABF /* JournalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */; };
+		3FDBAA782BE265F300EAC5FD /* PreviousWeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */; };
 		3FDE72F52BDA42CF003CC57C /* LibraryStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */; };
 		3FDE72F92BDA4553003CC57C /* JounalStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72F82BDA4553003CC57C /* JounalStructures.swift */; };
 		3FDE72FD2BDA4A05003CC57C /* profileStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */; };
 		3FDE72FF2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */; };
 		3FDE73012BDA5ADE003CC57C /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */; };
+		3FEB9D912BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourWriViewController.swift; sourceTree = "<group>"; };
+		3F4183B12BE0FBAB003DD71B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentTableViewCell.swift; sourceTree = "<group>"; };
 		3F6CD8542BD789590080A0D8 /* FaceFlex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFlex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6CD8572BD789590080A0D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6CD8592BD789590080A0D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,16 +44,19 @@
 		3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6CD8632BD7895B0080A0D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6CD8652BD7895B0080A0D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F97B6572BDB822D0065207E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedCourseCollectionViewCell.swift; sourceTree = "<group>"; };
-		3FBCC1402BDA38E400744372 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
-		3FBCC1422BDA39A700744372 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
-		3FBCC1442BDA39DC00744372 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
-		3FC3CFF52BDA6D5A0031604C /* PlannedCourseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlannedCourseCollectionViewController.swift; path = ../../../../../.Trash/PlannedCourseCollectionViewController.swift; sourceTree = "<group>"; };
+		3FBCC1402BDA38E400744372 /* HomeStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStructure.swift; sourceTree = "<group>"; };
+		3FBD58202BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedCourseCollectionViewController.swift; sourceTree = "<group>"; };
+		3FC8BDF92BE0A8610045EABF /* JournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewController.swift; sourceTree = "<group>"; };
+		3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousWeeksViewController.swift; sourceTree = "<group>"; };
 		3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStructures.swift; sourceTree = "<group>"; };
 		3FDE72F82BDA4553003CC57C /* JounalStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JounalStructures.swift; sourceTree = "<group>"; };
 		3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileStructures.swift; sourceTree = "<group>"; };
 		3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
+		3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAdditionalSkincareollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4297452BE1FB6A00510CAD /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +111,7 @@
 				3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */,
 				3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */,
 				3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */,
+				3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -104,11 +119,10 @@
 		3F8AD9CD2BDA2F1F00D569EE /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3FC3CFF52BDA6D5A0031604C /* PlannedCourseCollectionViewController.swift */,
 				3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */,
-				3FBCC1402BDA38E400744372 /* ListItem.swift */,
-				3FBCC1422BDA39A700744372 /* MockData.swift */,
-				3FBCC1442BDA39DC00744372 /* ListSection.swift */,
+				3FBD58202BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift */,
+				3FBCC1402BDA38E400744372 /* HomeStructure.swift */,
+				3F4183B12BE0FBAB003DD71B /* ArticleTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -117,6 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				3FDE72F82BDA4553003CC57C /* JounalStructures.swift */,
+				3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */,
+				3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */,
+				3FC8BDF92BE0A8610045EABF /* JournalCollectionViewCell.swift */,
+				3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */,
+				3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -125,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */,
+				3F97B6572BDB822D0065207E /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -145,6 +165,9 @@
 			dependencies = (
 			);
 			name = FaceFlex;
+			packageProductDependencies = (
+				3F4297442BE1FB6A00510CAD /* FSCalendar */,
+			);
 			productName = FaceFlex;
 			productReference = 3F6CD8542BD789590080A0D8 /* FaceFlex.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 3F6CD84B2BD789590080A0D8;
+			packageReferences = (
+				3F4297432BE1FB6A00510CAD /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = 3F6CD8552BD789590080A0D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -204,15 +230,21 @@
 				3FDE73012BDA5ADE003CC57C /* WorkoutsViewController.swift in Sources */,
 				3FDE72F92BDA4553003CC57C /* JounalStructures.swift in Sources */,
 				3FDE72FD2BDA4A05003CC57C /* profileStructures.swift in Sources */,
+				3F97B6582BDB822D0065207E /* ProfileViewController.swift in Sources */,
 				3FDE72FF2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift in Sources */,
 				3F6CD85C2BD789590080A0D8 /* ViewController.swift in Sources */,
-				3FBCC1412BDA38E400744372 /* ListItem.swift in Sources */,
+				3FBCC1412BDA38E400744372 /* HomeStructure.swift in Sources */,
+				3F4C71082BE11B7A0028F87E /* MomentTableViewCell.swift in Sources */,
 				3F6CD8582BD789590080A0D8 /* AppDelegate.swift in Sources */,
+				3FC8BDFC2BE0A86F0045EABF /* JournalCollectionViewController.swift in Sources */,
+				3F4183B22BE0FBAB003DD71B /* ArticleTableViewCell.swift in Sources */,
 				3F99E6942BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift in Sources */,
-				3FBCC1452BDA39DC00744372 /* ListSection.swift in Sources */,
-				3FC3CFF62BDA6D5B0031604C /* PlannedCourseCollectionViewController.swift in Sources */,
-				3FBCC1432BDA39A700744372 /* MockData.swift in Sources */,
+				3FEB9D912BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift in Sources */,
+				3FDBAA782BE265F300EAC5FD /* PreviousWeeksViewController.swift in Sources */,
+				3FC8BDFA2BE0A8610045EABF /* JournalCollectionViewCell.swift in Sources */,
+				3FBD58212BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift in Sources */,
 				3F6CD85A2BD789590080A0D8 /* SceneDelegate.swift in Sources */,
+				3F16D1C02BE2568300E3BB73 /* JourWriViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +396,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7H4KT73752;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FaceFlex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -391,6 +424,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7H4KT73752;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FaceFlex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -433,6 +467,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F4297432BE1FB6A00510CAD /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F4297442BE1FB6A00510CAD /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F4297432BE1FB6A00510CAD /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F6CD84C2BD789590080A0D8 /* Project object */;
 }

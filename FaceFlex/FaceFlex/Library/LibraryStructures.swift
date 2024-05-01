@@ -7,18 +7,18 @@
 
 import Foundation
 struct Workouts{
-    let workoutImage : String
-    let workoutName : String
-    let wrokoutDescription : String
+    var workoutImage : String
+    var workoutName : String
+    var wrokoutDescription : String
 }
 
 struct AdditionalSkincare{
-    let skincareImage : String
-    let skincareType : String
+    var skincareImage : String
+    var skincareType : String
 
 }
 struct WeeklyTips{
-    let tipImage : String
-    let tipName : String
-    let tipDescription : String
+    var tipImage : String
+    var tipName : String
+    var tipDescription : String
 }

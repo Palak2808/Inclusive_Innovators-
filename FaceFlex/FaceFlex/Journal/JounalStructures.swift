@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import FSCalendar
+
 struct WeekData{
     var image: String
 
-    var weekDay : String
-
+    var weekDay = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 }
+
 struct Moments{
     var image: String
-    var weekDay: String
-    var description: String
+    var weekDay =  ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    var description = ["Feeling very Fresh","Loved the Workout"]
 }
