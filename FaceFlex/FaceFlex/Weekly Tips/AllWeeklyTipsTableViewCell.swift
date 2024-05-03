@@ -1,0 +1,29 @@
+//
+//  AllWeeklyTipsTableViewCell.swift
+//  FaceFlex
+//
+//  Created by student on 03/05/24.
+//
+
+import UIKit
+
+class AllWeeklyTipsTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var allWeeklyImage: UIImageView!
+    
+    @IBOutlet weak var allWeeklyLabel: UILabel!
+    
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+}

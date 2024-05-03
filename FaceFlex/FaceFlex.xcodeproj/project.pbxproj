@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0958A22BE4DDEC00CCC8A7 /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0958A12BE4DDEC00CCC8A7 /* detailsViewController.swift */; };
+		3F0958A42BE4E62000CCC8A7 /* FFModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F0958A32BE4E62000CCC8A7 /* FFModel.mlmodel */; };
+		3F0958A72BE4E7CA00CCC8A7 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0958A62BE4E7CA00CCC8A7 /* cameraViewController.swift */; };
+		3F1416B22BE49866001FA39C /* WeeklyTipsStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416B12BE49866001FA39C /* WeeklyTipsStructure.swift */; };
+		3F1416B92BE4A04A001FA39C /* AllWeeklyTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416B82BE4A04A001FA39C /* AllWeeklyTipsViewController.swift */; };
+		3F1416BB2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416BA2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift */; };
+		3F1416BD2BE4A816001FA39C /* AllWeeklyTipsStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416BC2BE4A816001FA39C /* AllWeeklyTipsStructure.swift */; };
 		3F16D1C02BE2568300E3BB73 /* JourWriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */; };
+		3F1BD3D22BE4185A00C27B06 /* AllTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BD3D12BE4185A00C27B06 /* AllTipsViewController.swift */; };
+		3F1BD3D42BE41D1D00C27B06 /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BD3D32BE41D1D00C27B06 /* calendarViewController.swift */; };
 		3F4183B22BE0FBAB003DD71B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4183B12BE0FBAB003DD71B /* ArticleTableViewCell.swift */; };
 		3F4297452BE1FB6A00510CAD /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3F4297442BE1FB6A00510CAD /* FSCalendar */; };
 		3F4C71082BE11B7A0028F87E /* MomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */; };
@@ -17,11 +26,13 @@
 		3F6CD85F2BD789590080A0D8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD85E2BD789590080A0D8 /* Base */; };
 		3F6CD8612BD7895B0080A0D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */; };
 		3F6CD8642BD7895B0080A0D8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD8632BD7895B0080A0D8 /* Base */; };
+		3F76822A2BE35252000EB208 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7682292BE35252000EB208 /* GoalViewController.swift */; };
+		3F76822F2BE36329000EB208 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76822E2BE36329000EB208 /* ExerciseViewController.swift */; };
+		3F7682312BE3633A000EB208 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7682302BE3633A000EB208 /* ExerciseTableViewCell.swift */; };
 		3F97B6582BDB822D0065207E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97B6572BDB822D0065207E /* ProfileViewController.swift */; };
 		3F99E6942BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */; };
 		3FBCC1412BDA38E400744372 /* HomeStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1402BDA38E400744372 /* HomeStructure.swift */; };
 		3FBD58212BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD58202BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift */; };
-		3FC8BDFA2BE0A8610045EABF /* JournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8BDF92BE0A8610045EABF /* JournalCollectionViewCell.swift */; };
 		3FC8BDFC2BE0A86F0045EABF /* JournalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */; };
 		3FDBAA782BE265F300EAC5FD /* PreviousWeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */; };
 		3FDE72F52BDA42CF003CC57C /* LibraryStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */; };
@@ -30,10 +41,20 @@
 		3FDE72FF2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */; };
 		3FDE73012BDA5ADE003CC57C /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */; };
 		3FEB9D912BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */; };
+		3FFCC1632BE51996001DE7F7 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFCC1622BE51996001DE7F7 /* UserDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0958A12BE4DDEC00CCC8A7 /* detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
+		3F0958A32BE4E62000CCC8A7 /* FFModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FFModel.mlmodel; sourceTree = "<group>"; };
+		3F0958A62BE4E7CA00CCC8A7 /* cameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
+		3F1416B12BE49866001FA39C /* WeeklyTipsStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTipsStructure.swift; sourceTree = "<group>"; };
+		3F1416B82BE4A04A001FA39C /* AllWeeklyTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllWeeklyTipsViewController.swift; path = "FaceFlex/Weekly Tips/AllWeeklyTipsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		3F1416BA2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllWeeklyTipsTableViewCell.swift; path = "FaceFlex/Weekly Tips/AllWeeklyTipsTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		3F1416BC2BE4A816001FA39C /* AllWeeklyTipsStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllWeeklyTipsStructure.swift; path = "FaceFlex/Weekly Tips/AllWeeklyTipsStructure.swift"; sourceTree = SOURCE_ROOT; };
 		3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourWriViewController.swift; sourceTree = "<group>"; };
+		3F1BD3D12BE4185A00C27B06 /* AllTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTipsViewController.swift; sourceTree = "<group>"; };
+		3F1BD3D32BE41D1D00C27B06 /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
 		3F4183B12BE0FBAB003DD71B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentTableViewCell.swift; sourceTree = "<group>"; };
 		3F6CD8542BD789590080A0D8 /* FaceFlex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFlex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,11 +65,13 @@
 		3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6CD8632BD7895B0080A0D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6CD8652BD7895B0080A0D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7682292BE35252000EB208 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		3F76822E2BE36329000EB208 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		3F7682302BE3633A000EB208 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		3F97B6572BDB822D0065207E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedCourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FBCC1402BDA38E400744372 /* HomeStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStructure.swift; sourceTree = "<group>"; };
 		3FBD58202BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedCourseCollectionViewController.swift; sourceTree = "<group>"; };
-		3FC8BDF92BE0A8610045EABF /* JournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewController.swift; sourceTree = "<group>"; };
 		3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousWeeksViewController.swift; sourceTree = "<group>"; };
 		3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStructures.swift; sourceTree = "<group>"; };
@@ -57,6 +80,7 @@
 		3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
 		3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAdditionalSkincareollectionViewCell.swift; sourceTree = "<group>"; };
+		3FFCC1622BE51996001DE7F7 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +95,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0958A52BE4E7B700CCC8A7 /* cameraExercise */ = {
+			isa = PBXGroup;
+			children = (
+				3F0958A62BE4E7CA00CCC8A7 /* cameraViewController.swift */,
+			);
+			path = cameraExercise;
+			sourceTree = "<group>";
+		};
+		3F1416B02BE497FE001FA39C /* Weekly Tips */ = {
+			isa = PBXGroup;
+			children = (
+				3F1BD3D12BE4185A00C27B06 /* AllTipsViewController.swift */,
+				3F1416B12BE49866001FA39C /* WeeklyTipsStructure.swift */,
+			);
+			path = "Weekly Tips";
+			sourceTree = "<group>";
+		};
+		3F1416B72BE4A020001FA39C /* All Weekly Tips */ = {
+			isa = PBXGroup;
+			children = (
+				3F1416B82BE4A04A001FA39C /* AllWeeklyTipsViewController.swift */,
+				3F1416BC2BE4A816001FA39C /* AllWeeklyTipsStructure.swift */,
+				3F1416BA2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift */,
+			);
+			path = "All Weekly Tips";
+			sourceTree = "<group>";
+		};
 		3F6CD84B2BD789590080A0D8 = {
 			isa = PBXGroup;
 			children = (
@@ -90,19 +141,44 @@
 		3F6CD8562BD789590080A0D8 /* FaceFlex */ = {
 			isa = PBXGroup;
 			children = (
+				3F0958A52BE4E7B700CCC8A7 /* cameraExercise */,
+				3F1416B72BE4A020001FA39C /* All Weekly Tips */,
+				3F1416B02BE497FE001FA39C /* Weekly Tips */,
+				3F76822D2BE362C3000EB208 /* Exercise */,
+				3F7682282BE3523C000EB208 /* Desired Goal */,
 				3FDE72FB2BDA460B003CC57C /* Profile */,
 				3FDE72F72BDA453D003CC57C /* Journal */,
 				3F8AD9CD2BDA2F1F00D569EE /* Home */,
 				3F8AD9CC2BDA2F1100D569EE /* Library */,
+				3FFCC1622BE51996001DE7F7 /* UserDetailsViewController.swift */,
 				3F6CD8572BD789590080A0D8 /* AppDelegate.swift */,
 				3F6CD8592BD789590080A0D8 /* SceneDelegate.swift */,
 				3F6CD85B2BD789590080A0D8 /* ViewController.swift */,
 				3F6CD85D2BD789590080A0D8 /* Main.storyboard */,
+				3F0958A12BE4DDEC00CCC8A7 /* detailsViewController.swift */,
+				3F0958A32BE4E62000CCC8A7 /* FFModel.mlmodel */,
 				3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */,
 				3F6CD8622BD7895B0080A0D8 /* LaunchScreen.storyboard */,
 				3F6CD8652BD7895B0080A0D8 /* Info.plist */,
 			);
 			path = FaceFlex;
+			sourceTree = "<group>";
+		};
+		3F7682282BE3523C000EB208 /* Desired Goal */ = {
+			isa = PBXGroup;
+			children = (
+				3F7682292BE35252000EB208 /* GoalViewController.swift */,
+			);
+			path = "Desired Goal";
+			sourceTree = "<group>";
+		};
+		3F76822D2BE362C3000EB208 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				3F76822E2BE36329000EB208 /* ExerciseViewController.swift */,
+				3F7682302BE3633A000EB208 /* ExerciseTableViewCell.swift */,
+			);
+			path = Exercise;
 			sourceTree = "<group>";
 		};
 		3F8AD9CC2BDA2F1100D569EE /* Library */ = {
@@ -132,9 +208,9 @@
 			children = (
 				3FDE72F82BDA4553003CC57C /* JounalStructures.swift */,
 				3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */,
-				3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */,
-				3FC8BDF92BE0A8610045EABF /* JournalCollectionViewCell.swift */,
 				3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */,
+				3F1BD3D32BE41D1D00C27B06 /* calendarViewController.swift */,
+				3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */,
 				3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */,
 			);
 			path = Journal;
@@ -227,21 +303,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FDE72F52BDA42CF003CC57C /* LibraryStructures.swift in Sources */,
+				3F76822F2BE36329000EB208 /* ExerciseViewController.swift in Sources */,
+				3F1416B92BE4A04A001FA39C /* AllWeeklyTipsViewController.swift in Sources */,
+				3F76822A2BE35252000EB208 /* GoalViewController.swift in Sources */,
 				3FDE73012BDA5ADE003CC57C /* WorkoutsViewController.swift in Sources */,
 				3FDE72F92BDA4553003CC57C /* JounalStructures.swift in Sources */,
 				3FDE72FD2BDA4A05003CC57C /* profileStructures.swift in Sources */,
+				3F0958A72BE4E7CA00CCC8A7 /* cameraViewController.swift in Sources */,
 				3F97B6582BDB822D0065207E /* ProfileViewController.swift in Sources */,
+				3F1416BD2BE4A816001FA39C /* AllWeeklyTipsStructure.swift in Sources */,
 				3FDE72FF2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift in Sources */,
+				3F1BD3D42BE41D1D00C27B06 /* calendarViewController.swift in Sources */,
 				3F6CD85C2BD789590080A0D8 /* ViewController.swift in Sources */,
 				3FBCC1412BDA38E400744372 /* HomeStructure.swift in Sources */,
+				3F1BD3D22BE4185A00C27B06 /* AllTipsViewController.swift in Sources */,
 				3F4C71082BE11B7A0028F87E /* MomentTableViewCell.swift in Sources */,
+				3F1416BB2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift in Sources */,
 				3F6CD8582BD789590080A0D8 /* AppDelegate.swift in Sources */,
+				3F1416B22BE49866001FA39C /* WeeklyTipsStructure.swift in Sources */,
 				3FC8BDFC2BE0A86F0045EABF /* JournalCollectionViewController.swift in Sources */,
+				3F0958A42BE4E62000CCC8A7 /* FFModel.mlmodel in Sources */,
+				3F7682312BE3633A000EB208 /* ExerciseTableViewCell.swift in Sources */,
 				3F4183B22BE0FBAB003DD71B /* ArticleTableViewCell.swift in Sources */,
 				3F99E6942BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift in Sources */,
 				3FEB9D912BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift in Sources */,
+				3FFCC1632BE51996001DE7F7 /* UserDetailsViewController.swift in Sources */,
+				3F0958A22BE4DDEC00CCC8A7 /* detailsViewController.swift in Sources */,
 				3FDBAA782BE265F300EAC5FD /* PreviousWeeksViewController.swift in Sources */,
-				3FC8BDFA2BE0A8610045EABF /* JournalCollectionViewCell.swift in Sources */,
 				3FBD58212BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift in Sources */,
 				3F6CD85A2BD789590080A0D8 /* SceneDelegate.swift in Sources */,
 				3F16D1C02BE2568300E3BB73 /* JourWriViewController.swift in Sources */,
@@ -396,9 +484,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7H4KT73752;
+				DEVELOPMENT_TEAM = 69V6642GUH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FaceFlex/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow your camera access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -409,7 +498,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = none.FaceFlex;
+				PRODUCT_BUNDLE_IDENTIFIER = none.FaceFlexxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,9 +513,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7H4KT73752;
+				DEVELOPMENT_TEAM = 69V6642GUH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FaceFlex/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow your camera access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -437,7 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = none.FaceFlex;
+				PRODUCT_BUNDLE_IDENTIFIER = none.FaceFlexxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

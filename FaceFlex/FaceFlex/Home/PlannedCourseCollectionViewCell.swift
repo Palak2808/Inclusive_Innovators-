@@ -48,7 +48,7 @@ class PlannedCourseCollectionViewCell: UICollectionViewCell {
         private func setupContentViewConstraints() {
             contentView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                contentView.widthAnchor.constraint(equalToConstant: self.frame.size.width), // Set your desired width
+                contentView.widthAnchor.constraint(equalToConstant: self.frame.size.width - 50), // Set your desired width
                 contentView.heightAnchor.constraint(equalToConstant: 200) // Set your desired height
             ])
             

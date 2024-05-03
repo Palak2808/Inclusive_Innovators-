@@ -16,6 +16,13 @@ class WorkoutsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var numberOfExerciseLabel: UILabel!
     
+    
+
+    
+    
+    
+    
+    
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupContentViewConstraints()
@@ -29,7 +36,7 @@ class WorkoutsCollectionViewCell: UICollectionViewCell {
     private func setupContentViewConstraints() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            contentView.widthAnchor.constraint(equalToConstant: 140), // Set your desired width
+            contentView.widthAnchor.constraint(equalToConstant: 150), // Set your desired width
             contentView.heightAnchor.constraint(equalToConstant: 170) // Set your desired height
         ])
     }

@@ -38,12 +38,14 @@ class JourWriViewController: UIViewController {
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
-            nextWeek.alpha = 0
-            previousWeek.alpha = 1
-        }
-        else{
             nextWeek.alpha = 1
             previousWeek.alpha = 0
+            
+            
+        }
+        else{
+            nextWeek.alpha = 0
+            previousWeek.alpha = 1
         }
 
    }

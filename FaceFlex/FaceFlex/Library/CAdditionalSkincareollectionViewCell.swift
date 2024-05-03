@@ -9,8 +9,9 @@ import UIKit
 
 class CAdditionalSkincareollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var skincareName: UILabel!
+
     @IBOutlet weak var additionalImage: UIImageView!
+    @IBOutlet weak var skincareName: UILabel!
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupContentViewConstraints()
@@ -24,8 +25,8 @@ class CAdditionalSkincareollectionViewCell: UICollectionViewCell {
         private func setupContentViewConstraints() {
             contentView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                contentView.widthAnchor.constraint(equalToConstant: 120), // Set your desired width
-                contentView.heightAnchor.constraint(equalToConstant: 150) // Set your desired height
+                contentView.widthAnchor.constraint(equalToConstant: 150), // Set your desired width
+                contentView.heightAnchor.constraint(equalToConstant: 160) // Set your desired height
             ])
         }
 }

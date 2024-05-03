@@ -8,16 +8,59 @@
 //import Foundation
 import Foundation
 
-//struct ListItem {
-//    
-//    var image: [String] = ["image1","image2"]
-//    var label1:  [String] = ["5 Exercises" ,"4 Exercises"]
-//    var label2: 
-
-
-
-
 // MARK: - COURSE STRUCT
+struct Progress{
+    var id: UUID
+    var weekNumber : String
+    var includeBreak: Bool
+    var breakStartTime: String
+    var breakEndTime: String
+    var meditation: Bool
+    var resources: String
+    var isCompleted: Bool
+    init(id: UUID, weekNumber:String, includeBreak: Bool, breakStartTime: String, breakEndTime: String, meditation: Bool, resources: String, isCompleted: Bool) {
+            self.id = id
+           self.weekNumber = weekNumber
+            self.includeBreak = includeBreak
+            self.breakStartTime = breakStartTime
+            self.breakEndTime = breakEndTime
+            self.meditation = meditation
+            self.resources = resources
+            self.isCompleted = isCompleted
+        }
+}
+
+class ProgressManager{
+    var ProgressInstance : [Progress] = []
+    init() {
+            ProgressInstance.append( Progress(id: UUID(), weekNumber: "Week 1", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: true ) )
+            
+            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 2", includeBreak: true, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: false))
+            
+            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 3" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))
+            
+            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 4", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: true))
+            
+            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 5" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: false))
+            
+            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 6", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: true))
+            
+            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: false))
+            
+            
+        }
+    func getAllTasks() -> [Progress] { return self.ProgressInstance }
+        
+        func addTask(task: Progress) {
+            self.ProgressInstance.append(task)
+        }
+        
+        func getTaskById(id: UUID) -> Progress { self.ProgressInstance.filter({ $0.id.uuidString == id.uuidString })[0] }
+
+    }
+
+    var taskDataModel = ProgressManager()
+
 
 struct Course{
     var image: String
@@ -25,10 +68,13 @@ struct Course{
     var exerciseNumber : String
 }
 
-var PlannedCourses : [Course] = 
-[Course(image: "image1", name: "Wrinkle Free", exerciseNumber: "5"),
- Course(image: "image2", name: "Fine Lines", exerciseNumber: "4")]
-
+class PlannedCourseManger{
+    public static var PlannedCourses : [Course] =
+    [Course(image: "image1", name: "Wrinkle Free", exerciseNumber: "5 Exercises"),
+     Course(image: "image2", name: "Fine Lines", exerciseNumber: "4 Exercises")]
+    
+    static func getPlannedCourseDetails() ->  [Course] {return PlannedCourses}
+}
 // MARK: - ARTICLE STRUCT
 struct Article{
     var articleImage : String
@@ -36,9 +82,13 @@ struct Article{
     var descriptionText : String
 }
 
-var ArticleInfo : [Article] =
-[Article(articleImage: "image4", headingText: "Facial Exercise Impacts", descriptionText: "Checkout"),
-Article(articleImage: "w4", headingText: "Do's and Dont's", descriptionText: "Read Now")]
+class ArticleManager{
+    public static var ArticleInfo : [Article] =
+    [Article(articleImage: "image4", headingText: "Facial Exercise Impacts", descriptionText: "Checkout"),
+     Article(articleImage: "w4", headingText: "Do's and Dont's", descriptionText: "Read Now")]
+    
+    static func getArticle() -> [Article] {return ArticleInfo}
+}
 
 struct Exercises{
     var exerciseImage : String
