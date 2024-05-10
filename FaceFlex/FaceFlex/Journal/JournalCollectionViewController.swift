@@ -4,119 +4,181 @@
 //
 //  Created by student on 30/04/24.
 //
-
 import UIKit
 
-
-
-//class JournalCollectionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//
-//    
-//    @IBOutlet weak var momentTableView: UITableView!
-//    
-//    
-//    @IBOutlet weak var journalCollectionView: UICollectionView!
-//    
-// 
-//    
-//    let weekDay : [String] = ["Mon","Tues","Wed","Thurs","Fri","Sat","Sun"]
-//    
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-////        momentTableView.delegate = self
-////        momentTableView.dataSource = self
-////        
-////        journalCollectionView.delegate = self
-////        journalCollectionView.dataSource = self
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        weekDay.count
-//    }
-//    
-//   
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JournalCell", for: indexPath) as! JournalCollectionViewCell
-//        cell.dayName.text = weekDay[indexPath.row]
-//        return cell
-//    }
-//    
-////    
-////let momentDayArray:[String] = ["Monday","Tuesday"]
-////    let momentImageArray :[String] = ["moment1","image2"]
-////    let momentDescriptionArray:[String] = ["Feeling fresh","Feeling better skin"]
-////    
-////    
-////    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-////        return momentDayArray.count
-////    }
-////    
-////    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-////        //let pic = articleImageArray[indexPath.row]
-////        let cell = momentTableView.dequeueReusableCell(withIdentifier: "MomentCell", for: indexPath) as! MomentTableViewCell
-////        cell.momentDay.text = momentDayArray[indexPath.row]
-////        cell.momentDescription.text = momentDescriptionArray[indexPath.row]
-////        cell.momentImage.image = UIImage(named:momentImageArray[indexPath.row])
-////     
-////        cell.momentImage.contentMode = .scaleAspectFit
-////        
-////        
-////        return cell
-////    }
-////        
+class JournalCollectionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @IBOutlet weak var journalTableView: UITableView!
     
     
     
     
  
+    @IBOutlet weak var imagePresentHomeJournal: UIImageView!
+    
+    @IBOutlet var viewr1: [UIView]!
+   var CurrentMomentsInstance : [CurrentMoments] = CurrentMomentsManager.getAllCurrentMoments()
 
+    var tappedBoxView: UIView?
+   var captured: UIImage?
+    var selectedIndex: Int?
+    var selectedDate: Date?
+    var userDescription: String?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        print("hello")
+        for boxView in viewr1 {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(boxTapped(_:)))
+            boxView.addGestureRecognizer(tapGesture)
+        }
+        journalTableView.reloadData()
+        
+    }
+
+    
+    @objc func boxTapped(_ sender: UITapGestureRecognizer) {
+        // Check if camera is available
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("Camera is not available")
+            return
+        }
+
+        // Get the tapped view
+        guard let tappedBoxView = sender.view else { return }
+        //storing the tapped box view
+        self.tappedBoxView = tappedBoxView
+
+        // Present camera interface
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true)
+        
+        print("Segue will be performed after capturing image")
+        // Capture the current date
+               selectedDate = Date()
+    }
+
+    // MARK: - UIImagePickerControllerDelegate
+//      This codde i s tryign the indexing based image thing
+    
+    //func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        // Handle image captured by camera here
+//        if let image = info[.originalImage] as? UIImage {
+//            // Get the index of the tapped view
+//            guard let index = self.selectedIndex else { return }
+//            
+//            // Set the captured image to the image view at the corresponding index
+//            imagePresentHomeJournal[index].image = image
+//
+//            // Dismiss the image picker
+//            picker.dismiss(animated: true) { [weak self] in
+//                print("Image picker dismissed, performing segue...")
+//                // Perform segue to transition to SetImageViewContoller
+//                self?.performSegue(withIdentifier: "showSetImageViewContoller", sender: nil)
+//            }
+//        } else {
+//            picker.dismiss(animated: true, completion: nil)
+//        }
+//    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Handle image captured by camera here
+        if let image = info[.originalImage] as? UIImage {
+            // Store the captured image
+   
+           imagePresentHomeJournal.image = image
+            captured = image
+//            CurrentMomentsInstance.append(CurrentMoments(image: captured!, weekDate: selectedDate!, description: "Feeling very fresh"))
+            CurrentMomentsInstance.insert(CurrentMoments(image: captured!, weekDate: selectedDate!, description: "Feeling very fresh"), at: 0)
+            print(CurrentMomentsInstance)
+            journalTableView.reloadData()
+
+            // Dismiss the image picker
+            picker.dismiss(animated: true) { [weak self] in
+                print("Image picker dismissed, performing segue...")
+                // Perform segue to transition to SetImageViewContoller
+                self?.performSegue(withIdentifier: "showSetImageViewContoller", sender: nil)
+            }
+        } 
+        else {
+            picker.dismiss(animated: true, completion: nil)
+        }
+       
+
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showSetImageViewContoller" {
+            if let destinationVC = segue.destination as? UINavigationController {
+                if let svc = destinationVC.viewControllers[0] as? SetViewController {
+                    // Pass the captured image to SetImageViewContoller
+                    svc.capturedImage = captured
+                    print("Image to setViewControllere has been passed")
+                }
+            }
+            
+        }
+        
+        print("Segue")
+        
+        
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // print(CurrentMomentsInstance.count)
+        if(CurrentMomentsInstance.count == 0)
+        {
+            return 1
+        }
+        else{
+            return CurrentMomentsInstance.count
+        }
+       
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       
+        let cell = journalTableView.dequeueReusableCell(withIdentifier: "currentCell", for: indexPath) as! JournalCurrentTableViewCell
+        if(CurrentMomentsInstance.count == 0)
+        {
+            return cell
+        }
+        let data = CurrentMomentsInstance[indexPath.row]
+       
+        var date = data.weekDate
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        // Convert the date to a string
+        let dateString = dateFormatter.string(from: date)
+         
+        // Assign the string to the label's text property
+        cell.DayLabel.text = dateString
+//        cell.DescriptionLabel.text = userDescription
+        cell.DescriptionLabel.text = data.description
+        print(cell.DescriptionLabel.text!)
+        
+        
+        cell.ImageView.image = data.image
+       
+        return cell
+    }
+    @IBAction func unwindToJournalViewController(segue: UIStoryboardSegue) {
+        // Add any necessary code to handle the unwind action
+       // exerciseTableView.reloadData()
+    }
+    
+
+}

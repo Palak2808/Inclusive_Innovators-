@@ -11,21 +11,9 @@ import Foundation
 // MARK: - COURSE STRUCT
 struct Progress{
     var id: UUID
-    var weekNumber : String
-    var includeBreak: Bool
-    var breakStartTime: String
-    var breakEndTime: String
-    var meditation: Bool
-    var resources: String
     var isCompleted: Bool
-    init(id: UUID, weekNumber:String, includeBreak: Bool, breakStartTime: String, breakEndTime: String, meditation: Bool, resources: String, isCompleted: Bool) {
+    init(id: UUID, isCompleted: Bool) {
             self.id = id
-           self.weekNumber = weekNumber
-            self.includeBreak = includeBreak
-            self.breakStartTime = breakStartTime
-            self.breakEndTime = breakEndTime
-            self.meditation = meditation
-            self.resources = resources
             self.isCompleted = isCompleted
         }
 }
@@ -33,21 +21,14 @@ struct Progress{
 class ProgressManager{
     var ProgressInstance : [Progress] = []
     init() {
-            ProgressInstance.append( Progress(id: UUID(), weekNumber: "Week 1", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: true ) )
-            
-            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 2", includeBreak: true, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: false))
-            
-            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 3" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))
-            
-            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 4", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: true))
-            
-            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 5" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: false))
-            
-            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 6", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: true))
-            
-            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: false))
-            
-            
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
+        ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
         }
     func getAllTasks() -> [Progress] { return self.ProgressInstance }
         
@@ -62,6 +43,27 @@ class ProgressManager{
     var taskDataModel = ProgressManager()
 
 
+struct UserDetails{
+    var name : String
+    var age : String
+    var gender: String // Use Gender enum
+    
+//    enum Gender: String {
+//        case male
+//        case female
+//        case other
+//    }
+}
+
+class UserManager{
+    static let shared = UserManager()
+    public static var users : [UserDetails] = []
+    public static var presentUser : UserDetails? = nil
+    
+   // static func getPresentUser() -> UserDetails {return self.presentUser}
+}
+
+
 struct Course{
     var image: String
     var name : String
@@ -70,7 +72,7 @@ struct Course{
 
 class PlannedCourseManger{
     public static var PlannedCourses : [Course] =
-    [Course(image: "image1", name: "Wrinkle Free", exerciseNumber: "5 Exercises"),
+    [Course(image: "image1", name: "Wrinkle Free", exerciseNumber: "4 Exercises"),
      Course(image: "image2", name: "Fine Lines", exerciseNumber: "4 Exercises")]
     
     static func getPlannedCourseDetails() ->  [Course] {return PlannedCourses}
@@ -85,31 +87,62 @@ struct Article{
 class ArticleManager{
     public static var ArticleInfo : [Article] =
     [Article(articleImage: "image4", headingText: "Facial Exercise Impacts", descriptionText: "Checkout"),
-     Article(articleImage: "w4", headingText: "Do's and Dont's", descriptionText: "Read Now")]
+     Article(articleImage: "w4", headingText: "Do's and Dont's", descriptionText: "Read Now"),
+     Article(articleImage: "w4", headingText: "Maintaing Face Health", descriptionText: "Click to know more"),
+     Article(articleImage: "w4", headingText: "Face Care", descriptionText: "Read Now")]
     
     static func getArticle() -> [Article] {return ArticleInfo}
 }
 
 struct Exercises{
+    var exerciseNumber : String
     var exerciseImage : String
     var exerciseHeadingText : String
     var exerciseDescriptionText : String
+    var completed : Bool
 }
 
-var ExercisesInfo : [Exercises] = [Exercises(exerciseImage: "exercise1", exerciseHeadingText: "Pucker Up", exerciseDescriptionText: "5 Strokes"),Exercises(exerciseImage: "exercise1", exerciseHeadingText: "Air Puff Exercise", exerciseDescriptionText: "4")]
+class ExerciseManager{
+    public static var ExercisesInfo : [Exercises] = [Exercises(exerciseNumber : "Exercise 1",exerciseImage: "exercise1", exerciseHeadingText: "Cheek Sculptor", exerciseDescriptionText: "30 Strokes", completed: false),Exercises(exerciseNumber : "Exercise 2",exerciseImage: "exercise1", exerciseHeadingText: "Air Puff Exercise", exerciseDescriptionText: "40 Strokes",completed: false),Exercises(exerciseNumber : "Exercise 3",exerciseImage: "exercise1", exerciseHeadingText: "Tap Your Face", exerciseDescriptionText: "50 Strokes",completed: false),Exercises(exerciseNumber : "Exercise 4",exerciseImage: "exercise1", exerciseHeadingText: "Cheek Lifter", exerciseDescriptionText: "30 Strokes",completed: false)]
+    
+    static func getExercise() -> [Exercises] {return ExercisesInfo}
+    static func markExerciseCompleted(name: String) {
+        print(name)
+           guard let index = ExercisesInfo.firstIndex(where: { $0.exerciseHeadingText == name }) else {
+               // Exercise not found
+               return
+           }
+           ExercisesInfo[index].completed = true
+       }
+}
 
-//struct Articles{
-//    var articleImage : [String] = ["image4","w4"]
-//    var headingText : [String] = ["Facial Exercise Impacts","Do's and Dont's"]
-//    var descriptionText : [String] = ["Checkout","Read Now"]
-//}
+struct Ring{
+    var title : String
+    var description : String
+}
+class RingManager{
+    public static var ringInstance : [Ring] =
+    [Ring(title: "Week Number", description: "1"),
+     Ring(title: "Course Name", description: "Wrinkle Free"),
+     Ring(title: "Performance", description: "Excellent")]
+    
+    static func getRingManager() -> [Ring]{return ringInstance}
+}
 
-
-//struct Week{
-//    var weekNumber : [String] = ["Week 1", "Week 2", "Week 3", "Week 4","Week 5","Week 6","Week 7","Week 8"]
-//    var weekImage :  [String] = ["exercise1","exercise1","exercise1","exercise1","exercise1"]
-//    var courseName : [String] = ["Wrinkle Free", "Fine Lines"]
-//    var streak : [String] = ["4/6", "6/6","5/5"]
-//    var accuracy : [String] = ["90%", "85%","96%"]
-//}
-
+//            ProgressInstance.append( Progress(id: UUID(), weekNumber: "Week 1", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: true ) )
+//
+//            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 2", includeBreak: true, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: true))
+//
+//            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 3" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: true))
+//
+//            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 4", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "", isCompleted: true))
+//
+//            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 5" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: false))
+//
+//            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 6", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: true))
+//
+//            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))
+//
+//        ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))
+//
+//        ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))

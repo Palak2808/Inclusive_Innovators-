@@ -6,21 +6,26 @@
 //
 
 import UIKit
-class GradientCollectionViewCell: UICollectionViewCell {
-override func awakeFromNib() {
-    super.awakeFromNib()
-    applyGradient()
-}
-
-private func applyGradient() {
-    let gradientLayer = CAGradientLayer()
-    gradientLayer.frame = self.bounds
-    gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor] // Customize gradient colors as needed
-    gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-    gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-    self.layer.insertSublayer(gradientLayer, at: 0)
-}
-}
+//class GradientCollectionViewCell: UICollectionViewCell {
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        applyGradient()
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        applyGradient()
+//    }
+//    
+//    private func applyGradient() {
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = bounds
+//        gradientLayer.colors = [UIColor.white.cgColor, UIColor.brown.withAlphaComponent(0.1).cgColor] // Customize gradient colors as needed
+//        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+//        layer.insertSublayer(gradientLayer, at: 0)
+//    }
+//}
 
 class PlannedCourseCollectionViewCell: UICollectionViewCell {
   
@@ -43,7 +48,38 @@ class PlannedCourseCollectionViewCell: UICollectionViewCell {
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
             setupContentViewConstraints()
+            applyGradient()
         }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        applyGradient()
+        setupContentViewConstraints()
+    }
+    
+//    private func applyGradient() {
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = bounds
+//        gradientLayer.colors = [UIColor.white.cgColor, UIColor.brown.withAlphaComponent(0.0000001).cgColor] // Customize gradient colors as needed
+//        gradientLayer.startPoint = CGPoint(x: 0.3, y: 1.0)
+//        gradientLayer.endPoint = CGPoint(x: 0.3, y: 0.0)
+//        layer.insertSublayer(gradientLayer, at: 0)
+//    }
+    private func applyGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        
+        // Define beige color
+        let beigeColor = UIColor(red: 209/255, green: 196/255, blue: 183/255, alpha: 1.0) // Adjust RGB values as needed
+        
+        // Use beige color for the lightest shade
+        gradientLayer.colors = [UIColor.white.cgColor, beigeColor.cgColor]
+        
+        gradientLayer.startPoint = CGPoint(x: 0.3, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.3, y: 0.0)
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+
 
         private func setupContentViewConstraints() {
             contentView.translatesAutoresizingMaskIntoConstraints = false

@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        imageView.layer.cornerRadius = 50
+       // imageView.layer.cornerRadius = 50
         imageView.layer.masksToBounds = true
         tableView.delegate = self
         tableView.dataSource = self

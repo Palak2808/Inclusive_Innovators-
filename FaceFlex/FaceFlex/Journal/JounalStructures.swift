@@ -36,10 +36,29 @@ struct Moments{
 
 class MomentsManager{
     public static var MomentsInstance : [Moments] =
-    [Moments(image: "image1", weekDay: "Monday", description: "Feeling very fresh"),
-     Moments(image: "image1", weekDay: "Tuesday", description: "Feeling very fresh"),
-     Moments(image: "image1", weekDay: "Wedday", description: "Feeling very fresh"),
-     Moments(image: "image1", weekDay: "Thursday", description: "Feeling very fresh"),
-     Moments(image: "image1", weekDay: "Friday", description: "Feeling very fresh"),
-     Moments(image: "image1", weekDay: "Saturday", description: "Feeling very fresh"),]
+    [Moments(image: "moment1", weekDay: "Monday", description: "Feeling very fresh."),
+     Moments(image: "moment3", weekDay: "Tuesday", description: "Loved the Workout Today."),
+     Moments(image: "moment2", weekDay: "Wednesday", description: "Skin feels very Fresh."),
+     Moments(image: "moment4", weekDay: "Thursday", description: "Feeling very fresh"),
+     Moments(image: "moment5", weekDay: "Friday", description: "Feeling very fresh"),
+     Moments(image: "moment6", weekDay: "Saturday", description: "Feeling very fresh"),]
+    
+    static func getAllMoments() -> [Moments] {return MomentsInstance}
+}
+
+struct CurrentMoments {
+    var image: UIImage
+    var weekDate:Date
+    var description: String
+}
+
+class CurrentMomentsManager {
+    public static var CurrentMomentsInstance: [CurrentMoments] = [
+//        CurrentMoments(image: UIImage(named: mo), weekDate: <#T##Date#>, description: <#T##String#>)// Example date, you should replace this with your actual date
+        // Add other Moments instances here as needed
+    ]
+    
+    static func getAllCurrentMoments() -> [CurrentMoments] {
+        return CurrentMomentsInstance
+    }
 }

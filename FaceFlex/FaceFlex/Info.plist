@@ -4,6 +4,10 @@
 <dict>
 	<key></key>
 	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow camera access</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

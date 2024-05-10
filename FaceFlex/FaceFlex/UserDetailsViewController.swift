@@ -13,6 +13,7 @@ class UserDetailsViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var genderTextField: UITextField!
     
+   
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -93,6 +94,69 @@ class UserDetailsViewController: UIViewController,UITextFieldDelegate {
         deinit {
             NotificationCenter.default.removeObserver(self)
         }
+    
+    func showAlert(message: String) {
+           let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+           let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+           alertController.addAction(okAction)
+           present(alertController, animated: true, completion: nil)
+       }
 
+//    @IBAction func doneButtonUserDetails(_ sender: UIBarButtonItem) {
+//        guard let nameText = nameTextField.text, !nameText.isEmpty else {
+//              showAlert(message: "Please fill out the name field.")
+//              return
+//          }
+//          
+//          // Validate age field
+//          guard let ageText = ageTextField.text, !ageText.isEmpty else {
+//              showAlert(message: "Please fill out the age field.")
+//              return
+//          }
+//          
+//          // Validate gender field
+//          guard let genderText = genderTextField.text, !genderText.isEmpty else {
+//              showAlert(message: "Please fill out the gender field.")
+//              return
+//          }
+//          
+//    }
+    @IBAction func doneButtonUserDetails(_ sender: UIBarButtonItem) {
+        // Validate name field
+        guard let nameText = nameTextField.text, !nameText.isEmpty else {
+            showAlert(message: "Please fill out the name field.")
+            return
+        }
+        
+        // Validate age field
+        guard let ageText = ageTextField.text, !ageText.isEmpty else {
+            showAlert(message: "Please fill out the age field.")
+            return
+        }
+        
+        // Validate gender field
+        guard let genderText = genderTextField.text, !genderText.isEmpty else {
+            showAlert(message: "Please fill out the gender field.")
+            return
+        }
+        
+        // Create UserDetails instance with entered information
+        let user = UserDetails(name: nameText, age: ageText, gender: genderText)
+        print(user)
+        
+        // Set presentUser instance
+        UserManager.presentUser = user
+        
+        // Optionally, you can add the created user to the users array in UserManager
+        UserManager.users.append(user)
+        
+        // Optionally, you can perform any additional actions here
+        
+        // Show success message
+        let alertController = UIAlertController(title: "Success", message: "User details saved successfully.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 
 }

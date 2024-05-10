@@ -11,6 +11,11 @@ import HealthKitUI
 
 class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
     
+ 
+    @IBOutlet weak var completedTask: UILabel!
+    
+    @IBOutlet weak var completedTaskLabel: UILabel!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var articleTableView: UITableView!
@@ -19,20 +24,20 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
     
     var PlannedCourses : [Course] = PlannedCourseManger.getPlannedCourseDetails()
     var ProgressInstance : [Progress] = []; var completedTasks : [Progress] = [];var pendingTasks: [Progress] = []
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        // Do any additional setup after loading the view.
-       // collectionView.setCollectionViewLayout(generateLayout(), animated: true)
+       
         
         /// Create the Activity Ring
         let activityRingView = HKActivityRingView( frame: CGRect(x: 0.0, y: 0.0, width: 80, height: 80) )
                 let summary = HKActivitySummary();
                 
-                let compledTasks: Double = Double(taskDataModel.getAllTasks().filter({$0.isCompleted}).count)
+          let compledTasks: Double = Double(taskDataModel.getAllTasks().filter({ $0.isCompleted }).count)
                 let totalTasks: Double = Double(taskDataModel.getAllTasks().count)
                 
                 // Create the sepeerate file for creating the ring
@@ -46,36 +51,18 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
               mainView.addSubview(activityRingView)
         
         self.ProgressInstance = taskDataModel.getAllTasks()
-      //  activityRingView.fillColor = UIColor.red
-//               let completedTasksCount = ProgressInstance.filter({$0.isCompleted}).count
-               
-               // Cahnge the string and store in file
-//               completedTaskLabel?.text = " \(completedTasksCount)/\(ProgressInstance.count) Tasks Completed"
-//               ongoingTaskLabel?.text = " \(ProgressInstance[0].weekNumber)"
-//               upcomingTaskLabel?.text = "\(ProgressInstance[1].weekNumber)"
+        let completedTasksCount = ProgressInstance.filter({$0.isCompleted}).count
         
+        // Cahnge the string and store in file
+        completedTaskLabel?.text = "⭐️ \(completedTasksCount)/\(ProgressInstance.count) Tasks Completed"
+ 
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ArticleInfo.count
     }
-    
-//    func generateLayout() -> UICollectionViewLayout {
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//        
-//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(200))
-//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,repeatingSubitem: item,count:2)
-//        let spacing = CGFloat(20)
-//        group.contentInsets = NSDirectionalEdgeInsets(top: spacing, leading: 0, bottom: 0, trailing: 0)
-//        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(spacing)
-//        let section = NSCollectionLayoutSection(group: group)
-//        
-//        let layout = UICollectionViewCompositionalLayout(section: section)
-//        
-//        return layout
-//    }
+
     
     
     
@@ -95,15 +82,12 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
         cell.wrinkleImage.clipsToBounds = true
         return cell
     }
-    
-//    let articleImageArray = ["image4","w4"]
-//    let title2 : [String] = ["Facial Exercise Impacts","Do's and Dont's"]
-//    let description2 : [String] = ["Checkout","Read Now"]
+ 
     
     var ArticleInfo : [Article] = ArticleManager.getArticle()
     
     
-    let urls = ["https://google.com", "https://facebook.com"] // Your array of URLs
+    let urls = ["https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5885810/", "https://www.vogue.in/content/a-guide-to-face-yoga-for-a-healthy-sculpted-glow"] // Your array of URLs
        
         
     
@@ -116,10 +100,7 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
         cell.articleImage.image = UIImage(named: data.articleImage)
         cell.articleImage.layer.cornerRadius = 18
         cell.articleImage.contentMode = .scaleToFill
-        
-      // Just a placeholder text
-       
-        
+
         return cell
         //    }
         
@@ -134,17 +115,6 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
                 UIApplication.shared.open(url)
             }
         }
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
     // WEEKLY PROGRESS------------------------
     
     override func viewWillAppear(_ animated: Bool) {
@@ -165,11 +135,23 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
           
           // MARK: - Changing the Activity Details
          ProgressInstance = taskDataModel.getAllTasks()
-//          let completedTasksCount = self.tasks.filter({$0.isCompleted}).count
-//          
-//          completedTaskLabel?.text = "⭐️ \(completedTasksCount)/\(tasks.count) Tasks Completed"
-//          ongoingTaskLabel?.text = "\(tasks[0].emoji) \(tasks[0].title)"
-//          upcomingTaskLabel?.text = "\(tasks[1].emoji) \(tasks[1].title)"
-      }
-      
+
+
+    }
+    
 }
+//    @objc func imageTap() {
+//        /// or push to the navigation stack
+//        let destinationVC =  self.storyboard?.instantiateViewController(withIdentifier: "Task List") as! RingViewController
+//
+//        navigationController?.pushViewController(destinationVC, animated: true)
+//        mainView.isUserInteractionEnabled = true
+//        mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.imageTap)))
+       // activityRingView.fillColor = UIColor.brown
+//               let completedTasksCount = ProgressInstance.filter({$0.isCompleted}).count
+               
+               // Cahnge the string and store in file
+//               completedTaskLabel?.text = " \(completedTasksCount)/\(ProgressInstance.count) Tasks Completed"
+//               ongoingTaskLabel?.text = " \(ProgressInstance[0].weekNumber)"
+//               upcomingTaskLabel?.text = "\(ProgressInstance[1].weekNumber)"
+       

@@ -11,6 +11,7 @@ class JourWriViewController: UIViewController {
     
     @IBOutlet weak var nextWeek: UIView!
     @IBOutlet weak var previousWeek: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,9 +38,11 @@ class JourWriViewController: UIViewController {
     
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
+
         if sender.selectedSegmentIndex == 0{
             nextWeek.alpha = 1
             previousWeek.alpha = 0
+            print(nextWeek)
             
             
         }
@@ -51,3 +54,5 @@ class JourWriViewController: UIViewController {
    }
         
 }
+
+

@@ -87,7 +87,10 @@ class WorkoutsViewController: UIViewController,UICollectionViewDelegate, UIColle
         let size = (collectionView.frame.size.width - 10)
         return CGSize(width: size, height: size)
     }
-    
+    @IBAction func unwindToWorkoutViewController(_ unwindSegue: UIStoryboardSegue) {
+           // This method will be called when the unwind segue is performed.
+           // You can perform any necessary actions here.
+       }
     //-----------------
 //    
 //    let skincareImages : [String] = ["skincare1","skincare2","skincare3"]
