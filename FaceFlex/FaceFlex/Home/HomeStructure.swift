@@ -19,6 +19,7 @@ struct Progress{
 }
 
 class ProgressManager{
+    var completed :Int? = 0
     var ProgressInstance : [Progress] = []
     init() {
         ProgressInstance.append(Progress(id: UUID(),isCompleted : false))
@@ -55,12 +56,18 @@ struct UserDetails{
 //    }
 }
 
-class UserManager{
+class UserManager {
     static let shared = UserManager()
-    public static var users : [UserDetails] = []
-    public static var presentUser : UserDetails? = nil
+    public var users: [UserDetails] = []
+    public var presentUser: UserDetails? = nil
     
-   // static func getPresentUser() -> UserDetails {return self.presentUser}
+    func returnName() -> String? {
+        return presentUser?.name
+    }
+    
+    func makePresentUser(name: String, age: String, gender: String) {
+        presentUser = UserDetails(name: name, age: age, gender: gender)
+    }
 }
 
 
@@ -103,17 +110,45 @@ struct Exercises{
 }
 
 class ExerciseManager{
-    public static var ExercisesInfo : [Exercises] = [Exercises(exerciseNumber : "Exercise 1",exerciseImage: "exercise1", exerciseHeadingText: "Cheek Sculptor", exerciseDescriptionText: "30 Strokes", completed: false),Exercises(exerciseNumber : "Exercise 2",exerciseImage: "exercise1", exerciseHeadingText: "Air Puff Exercise", exerciseDescriptionText: "40 Strokes",completed: false),Exercises(exerciseNumber : "Exercise 3",exerciseImage: "exercise1", exerciseHeadingText: "Tap Your Face", exerciseDescriptionText: "50 Strokes",completed: false),Exercises(exerciseNumber : "Exercise 4",exerciseImage: "exercise1", exerciseHeadingText: "Cheek Lifter", exerciseDescriptionText: "30 Strokes",completed: false)]
+    static let shared = ExerciseManager()
+    public  var ExercisesInfo : [Exercises] = [Exercises(exerciseNumber : "Exercise 1",exerciseImage: "exercise1", exerciseHeadingText: "Cheek Sculptor", exerciseDescriptionText: "30 Strokes", completed: false),Exercises(exerciseNumber : "Exercise 2",exerciseImage: "exercise1", exerciseHeadingText: "Air Puff Exercise", exerciseDescriptionText: "40 Strokes",completed: false),Exercises(exerciseNumber : "Exercise 3",exerciseImage: "exercise1", exerciseHeadingText: "Tap Your Face", exerciseDescriptionText: "50 Strokes",completed: false),Exercises(exerciseNumber : "Exercise 4",exerciseImage: "exercise1", exerciseHeadingText: "Cheek Lifter", exerciseDescriptionText: "30 Strokes",completed: false)]
     
-    static func getExercise() -> [Exercises] {return ExercisesInfo}
-    static func markExerciseCompleted(name: String) {
-        print(name)
-           guard let index = ExercisesInfo.firstIndex(where: { $0.exerciseHeadingText == name }) else {
-               // Exercise not found
-               return
-           }
-           ExercisesInfo[index].completed = true
-       }
+     func getExercise() -> [Exercises] {return ExercisesInfo}
+     func isExerciseCompleted(name: String)  {
+        // Find the exercise with the given name
+        if let index = ExercisesInfo.firstIndex(where: { $0.exerciseHeadingText == name }) {
+            // Update the completion status of the exercise
+            ExercisesInfo[index].completed = true
+            RingManager.shared.incrementExerciseCompleted()
+            print("it has been pillu completed")
+            return  // Return true to indicate that the exercise was found and its completion status was updated
+        } else {
+            // Exercise not found
+            print("it hasbilllu completed")
+            return
+          
+        }
+    }
+    func isExerciseDone(name :String)->Bool
+    {
+        if let index = ExercisesInfo.firstIndex(where: { $0.exerciseHeadingText == name }) {
+            // Update the completion status of the exercise
+             if ExercisesInfo[index].completed == true
+            {
+                 
+                 print("it has been completed")
+                 return true
+             }
+            else
+            {
+                print("it has been not completed")
+                return false
+            }// Return true to indicate that the exercise was found and its completion status was updated
+        } else {
+            // Exercise not found
+            return false
+        }
+    }
 }
 
 struct Ring{
@@ -121,28 +156,17 @@ struct Ring{
     var description : String
 }
 class RingManager{
-    public static var ringInstance : [Ring] =
+    static let shared = RingManager()
+    public var exerciseCompleted :Int = 0
+    func incrementExerciseCompleted()
+    {
+        exerciseCompleted+=1
+    }
+    public  var ringInstance : [Ring] =
     [Ring(title: "Week Number", description: "1"),
      Ring(title: "Course Name", description: "Wrinkle Free"),
      Ring(title: "Performance", description: "Excellent")]
     
-    static func getRingManager() -> [Ring]{return ringInstance}
+     func getRingManager() -> [Ring]{return ringInstance}
 }
 
-//            ProgressInstance.append( Progress(id: UUID(), weekNumber: "Week 1", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: true ) )
-//
-//            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 2", includeBreak: true, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: true))
-//
-//            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 3" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: true))
-//
-//            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 4", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "", isCompleted: true))
-//
-//            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 5" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "", isCompleted: false))
-//
-//            ProgressInstance.append(Progress(id: UUID(), weekNumber: "Week 6", includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: false, resources: "7:11 PM", isCompleted: true))
-//
-//            ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))
-//
-//        ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))
-//
-//        ProgressInstance.append(Progress(id: UUID(),weekNumber: "Week 7" , includeBreak: false, breakStartTime: "7:11 PM", breakEndTime:"7:11 PM", meditation: true, resources: "7:11 PM", isCompleted: false))

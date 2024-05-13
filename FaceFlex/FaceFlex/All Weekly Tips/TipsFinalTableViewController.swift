@@ -9,24 +9,24 @@ import UIKit
 
 class TipsFinalTableViewController: UITableViewController {
     
-    @IBOutlet weak var tipImage: UIImageView!
+    @IBOutlet weak var tipImage: UIImageView!     // Image view for displaying the tip image
     
-    @IBOutlet weak var tipName: UILabel!
+    @IBOutlet weak var tipName: UILabel!        // Label for displaying the tip name
     
-    @IBOutlet weak var tipIngredients: UILabel!
+    @IBOutlet weak var tipIngredients: UILabel!  // Label for displaying the ingredients needed
     
     
-    @IBOutlet weak var tipMethod: UILabel!
+    @IBOutlet weak var tipMethod: UILabel!    // Label for displaying the tip method
     
 
-    let WeeklyInstance : [WeeklyTips] = WeeklyTipManager.getWeeklyTip()
+    let WeeklyInstance : [WeeklyTips] = WeeklyTipManager.getWeeklyTip()  // Array to store weekly tips
     
-    var selectedTipLabel: String?
-        var selectedTip: WeeklyTips?
+    var selectedTipLabel: String?  // Label of the selected tip
+        var selectedTip: WeeklyTips?  // Selected weekly tip object
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+            // Update UI with details of the selected tip
             if let selectedWeekNumber = selectedTipLabel {
                 // Find the matching tip from WeeklyTipsManager
                 if let matchedTip = WeeklyTipManager.WeeklyInstance.first(where: { $0.weekNumber == selectedWeekNumber }) {

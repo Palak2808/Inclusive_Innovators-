@@ -10,74 +10,78 @@ import UIKit
 class ExerciseViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
-    var ExercisesInstance : [Exercises] = ExerciseManager.getExercise()
+//    var ExercisesInstance : [Exercises] = ExerciseManager.getExercise()
+    var selectedExerciseLabel :String?
     
     
-
-
+    
+    
+    /// Navigates to the camera view controller.
     func navigateToCameraViewController() {
         // Instantiate the CameraViewController from storyboard
         if let cameraVC = storyboard?.instantiateViewController(withIdentifier: "CameraViewController") as? CameraViewController {
             navigationController?.pushViewController(cameraVC, animated: true)
         }
     }
-
-    
-
-    
+    /// Table view to display exercises.
     @IBOutlet weak var exerciseTableView: UITableView!
     var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
     }
   
-    
-    @IBAction func doneButtonClicked(_ sender: UIButton) {
-           // Update the completed status of the corresponding exercise (assuming you have the index or identifier of the exercise)
-           // For example, let's say you want to mark the first exercise as completed
-           let firstExerciseIndex = 0
-           if firstExerciseIndex < ExercisesInstance.count {
-               ExercisesInstance[firstExerciseIndex].completed = true
-               // Reload the table view to reflect the changes
-               exerciseTableView.reloadData()
-           }
-       }
+    /// Unwinds back to the source view controller when returning from another view controller.
     @IBAction func unwindToSourceViewController(segue: UIStoryboardSegue) {
-        // Add any necessary code to handle the unwind action
+        
         exerciseTableView.reloadData()
     }
+    
+    /// Returns the number of rows in the table view.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ExercisesInstance.count
+//        ExercisesInstance.count
+        ExerciseManager.shared.ExercisesInfo.count
     }
-
+    
+    
+    
+    /// Handles row selection in the table view.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedText = ExerciseManager.shared.ExercisesInfo[indexPath.row]
+        performSegue(withIdentifier: "ExerciseToCameraSegue", sender: selectedText)
+    }
+    
+    
+    
+    
+    
+    /// Configures and returns a cell for the table view.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        count+=1
-           let data = ExercisesInstance[indexPath.row]
-           let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as! ExerciseTableViewCell
-           cell.exerciseImage.image = UIImage(named: data.exerciseImage)
-           cell.exerciseName.text = data.exerciseHeadingText
-           cell.exerciseDescription.text = data.exerciseDescriptionText
-           
-           // Reduce font size for exerciseName label
-           cell.exerciseName.font = UIFont.systemFont(ofSize: 16) // Adjust the font size as needed
-           
-           // Reduce font size for exerciseDescription label
-           cell.exerciseDescription.font = UIFont.systemFont(ofSize: 14) // Adjust the font size as needed
-           
-           // Set disclosure accessory button
-        if(data.completed == false){
-            cell.accessoryType = .disclosureIndicator}
-        else{
+        let data = ExerciseManager.shared.ExercisesInfo[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as! ExerciseTableViewCell
+        
+        // Set exercise details
+        cell.exerciseImage.image = UIImage(named: data.exerciseImage)
+        cell.exerciseName.text = data.exerciseHeadingText
+        cell.exerciseDescription.text = data.exerciseDescriptionText
+        
+        // Reduce font size for exerciseName label
+        cell.exerciseName.font = UIFont.systemFont(ofSize: 16) // Adjust the font size as needed
+        
+        // Reduce font size for exerciseDescription label
+        cell.exerciseDescription.font = UIFont.systemFont(ofSize: 14) // Adjust the font size as needed
+        
+        // Check if the exercise is completed, and update the accessory type
+        if ExerciseManager.shared.isExerciseDone(name: data.exerciseHeadingText) {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .disclosureIndicator
         }
         
-        
-           
-           return cell
-       }
+        return cell
+    }
+
+    /// Prepares for segue navigation.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ExerciseToCameraSegue" {
             if let cameraVC = segue.destination as? CameraViewController,
@@ -87,52 +91,6 @@ class ExerciseViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
         }
     }
-
 }
 
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            let alert = UIAlertController(title: "Continue Exercise?", message: "Do you want to continue with this exercise?", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-//                self.navigateToCameraViewController()
-//            }))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//            present(alert, animated: true, completion: nil)
-//        }
-//
-//    func navigateToCameraViewController() {
-//            // Instantiate the CameraViewController from storyboard
-//            if let cameraVC = storyboard?.instantiateViewController(withIdentifier: "CameraViewController") as? CameraViewController {
-//                navigationController?.pushViewController(cameraVC, animated: true)
-//            }
-//        }
-//
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-////        let alert = UIAlertController(title: "Continue Exercise?", message: "Do you want to continue with this exercise?", preferredStyle: .alert)
-////        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-////            self.navigateToCameraViewController()
-////        }))
-////        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-////        present(alert, animated: true, completion: nil)
-//    }
-
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let data = ExercisesInstance[indexPath.row]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as! ExerciseTableViewCell
-//        cell.exerciseImage.image = UIImage(named: data.exerciseImage)
-//        cell.exerciseName.text = data.exerciseHeadingText
-//        cell.exerciseDescription.text = data.exerciseDescriptionText
-//
-//        // Reduce font size for exerciseName label
-//            cell.exerciseName.font = UIFont.systemFont(ofSize: 16) // Adjust the font size as needed
-//
-//            // Reduce font size for exerciseDescription label
-//            cell.exerciseDescription.font = UIFont.systemFont(ofSize: 14) // Adjust the font size as needed
-//
-//        // Set disclosure accessory button
-//            cell.accessoryType = .disclosureIndicator
-//
-//        return cell
-//
-//    }

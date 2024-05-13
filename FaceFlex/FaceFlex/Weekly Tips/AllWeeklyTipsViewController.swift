@@ -9,22 +9,20 @@ import UIKit
 
 class AllWeeklyTipsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    let AllWeeklyInstance : [AllWeeklyTips] = AllWeeklyTipsManager.getAllWeeklyTips()
-    let AllWeeklyInstanceDetail :[String] = AllWeeklyTipsManagerDetail.getAllWeeklyTipsDetail()
-    var selectedIndex:Int?
-    var count = 0;
-    @IBOutlet weak var AllWeeklyTableView: UITableView!
+    let AllWeeklyInstance : [AllWeeklyTips] = AllWeeklyTipsManager.getAllWeeklyTips()   // Array to store all weekly tips
+   // let AllWeeklyInstanceDetail :[String] = AllWeeklyTipsManagerDetail.getAllWeeklyTipsDetail()
+    var selectedIndex:Int?    // Index of the selected table view cell
+    var count = 0;    // Counter for tracking index
+    @IBOutlet weak var AllWeeklyTableView: UITableView!    // Table view to display all weekly tips
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        // Set data source and delegate for table view
         AllWeeklyTableView.dataSource = self
         AllWeeklyTableView.delegate = self
-        
-       // data.allWeeklyImage.layer.cornerRadius = 50
-       // imageView.layer.masksToBounds = true
     }
 
     
@@ -32,13 +30,11 @@ class AllWeeklyTipsViewController: UIViewController,UITableViewDelegate,UITableV
         AllWeeklyInstance.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           // Capture the index of the row tapped
-     //   selectedIndex = indexPath.row
-           // You can perform any actions here based on the selected index
        }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Configure table view cell
         selectedIndex = count
         count+=1;
         
@@ -62,6 +58,7 @@ class AllWeeklyTipsViewController: UIViewController,UITableViewDelegate,UITableV
                     if let cell = sender as? AllWeeklyTipsTableViewCell {
                         if let indexPath = AllWeeklyTableView.indexPath(for: cell) {
                             // Get the selected data from AllWeeklyInstance
+                            // Pass the selected tip label to the destination view controller
                             let selectedItem = AllWeeklyInstance[indexPath.row]
                             // Pass the label text to the destination view controller
                             destinationVC.selectedTipLabel = selectedItem.weekNumber

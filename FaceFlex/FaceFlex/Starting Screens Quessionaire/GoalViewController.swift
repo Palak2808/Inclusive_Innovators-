@@ -8,15 +8,16 @@
 import UIKit
 
 class GoalViewController: UIViewController {
-    
+    /// Array of UIImageViews representing desired goals.
     @IBOutlet var desiredGoal: [UIImageView]!
-    var blurEffectViews: [UIVisualEffectView] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         applyCornerRadiusToImageViews()
+        /// Sets up tap gesture recognizers for each UIImageView.
         for imageView in desiredGoal {
                     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)))
                     imageView.isUserInteractionEnabled = true
@@ -32,6 +33,13 @@ class GoalViewController: UIViewController {
             imageView.layer.masksToBounds = true
         }
     }
+    
+    
+    
+    
+    /// Handles tap gesture on the UIImageViews.
+       ///
+       /// - Parameter gesture: The UITapGestureRecognizer object.
     @objc func imageTapped(_ gesture: UITapGestureRecognizer) {
             // Reset borders for all image views
             for imageView in desiredGoal {

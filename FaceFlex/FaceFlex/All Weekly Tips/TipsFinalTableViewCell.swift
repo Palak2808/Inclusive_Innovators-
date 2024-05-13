@@ -8,14 +8,6 @@
 import UIKit
 
 class TipsFinalTableViewCell: UITableViewCell {
-    
-    
-    
-    
-    
-    
-    
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()

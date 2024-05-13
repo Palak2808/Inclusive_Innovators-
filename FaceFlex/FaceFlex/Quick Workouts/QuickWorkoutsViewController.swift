@@ -1,24 +1,24 @@
-//
-//  QuickWorkoutsViewController.swift
-//  FaceFlex
-//
-//  Created by student on 05/05/24.
-//
+
 
 import UIKit
 
 class QuickWorkoutsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // An array of QuickWorkouts instances representing the available quick workouts.
     let quickInstance : [QuickWorkouts] = QuickWorkoutsManager.getQuickWorkouts()
 
-    @IBOutlet weak var quickWorkoutsTableView: UITableView!
+    // MARK: - Outlets
+    @IBOutlet weak var quickWorkoutsTableView: UITableView! // Table view to display quick workouts
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    // MARK: - View Lifecycle
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            // Additional setup can be done here
+        }
+        
+        // MARK: - UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         quickInstance.count
     }
@@ -27,9 +27,10 @@ class QuickWorkoutsViewController: UIViewController, UITableViewDelegate, UITabl
         let data = quickInstance[indexPath.row]
         let cell = quickWorkoutsTableView.dequeueReusableCell(withIdentifier: "quickCell", for: indexPath) as! QuickWorkoutsTableViewCell
         
+        
+        // Configure cell with quick workout data
         cell.qImage.image = UIImage(named: data.QuickImage)
         cell.qImage.layer.cornerRadius = 18
-        //        cell.wrinkleImage.contentMode = .scaleAspectFill
         cell.qExercise.text = data.QuickExercise
         cell.qDescription.text = data.QuickDescription
         cell.qExercise.font = UIFont.systemFont(ofSize: 16)
@@ -37,32 +38,18 @@ class QuickWorkoutsViewController: UIViewController, UITableViewDelegate, UITabl
             
         return cell
     }
+    let videoNames = ["video.mp4","videoo.mp4","video2.mp4","video2.mp4","video2.mp4"]
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destinationViewController = segue.destination as? videoViewController,
+             let selectedCell = sender as? UITableViewCell,
+             let indexPath = quickWorkoutsTableView.indexPath(for: selectedCell) {
+              
+              // Assuming you have an array of video names called "videoNames"
+            // Get the video name corresponding to the selected cell
+              let videoName = videoNames[indexPath.section]
+              destinationViewController.video = videoName
+          }
     }
-    */
 
 }

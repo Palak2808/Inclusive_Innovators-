@@ -17,14 +17,8 @@ class ArticleTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var articleName: UILabel!
-    
-    
-    
-    @IBOutlet weak var articleDescription: UILabel!
-    
-   
 
-    
+    @IBOutlet weak var articleDescription: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -9,19 +9,16 @@ import UIKit
 
 class ExerciseTableViewCell: UITableViewCell {
 
-    
+    /// Image view to display exercise image.
     @IBOutlet weak var exerciseImage: UIImageView!
     
-    
+    /// Label to display exercise name.
     @IBOutlet weak var exerciseName: UILabel!
     
-    
+    /// Label to display exercise description.
     @IBOutlet weak var exerciseDescription: UILabel!
     
-    
-    
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

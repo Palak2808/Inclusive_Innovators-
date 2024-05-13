@@ -31,33 +31,29 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
         collectionView.delegate = self
         collectionView.dataSource = self
         
-       
-        
         /// Create the Activity Ring
-        let activityRingView = HKActivityRingView( frame: CGRect(x: 0.0, y: 0.0, width: 80, height: 80) )
-                let summary = HKActivitySummary();
-                
-          let compledTasks: Double = Double(taskDataModel.getAllTasks().filter({ $0.isCompleted }).count)
-                let totalTasks: Double = Double(taskDataModel.getAllTasks().count)
-                
-                // Create the sepeerate file for creating the ring
-                /// Creating Rring (Green)
-                summary.appleExerciseTime = HKQuantity(unit: HKUnit.hour(), doubleValue: compledTasks);
-                summary.appleExerciseTimeGoal = HKQuantity(unit: HKUnit.hour(), doubleValue: totalTasks);
-                
-                /// Set the activity summary
-                activityRingView.setActivitySummary(summary, animated: true)
-                
-              mainView.addSubview(activityRingView)
-        
-        self.ProgressInstance = taskDataModel.getAllTasks()
-        let completedTasksCount = ProgressInstance.filter({$0.isCompleted}).count
-        
-        // Cahnge the string and store in file
-        completedTaskLabel?.text = "⭐️ \(completedTasksCount)/\(ProgressInstance.count) Tasks Completed"
+        let activityRingView = HKActivityRingView(frame: CGRect(x: 0.0, y: 0.0, width: 80, height: 80))
+
+        // Calculate the percentage of completed tasks
+        let completedTasks: Double = Double(RingManager.shared.exerciseCompleted)
+        let totalTasks: Double = Double(4)
+        let completionPercentage = completedTasks / totalTasks
+
+        // Set the progress for the activity ring
+        activityRingView.setActivitySummary(
+            HKActivitySummary(),
+            animated: true
+        )
+
+        mainView.addSubview(activityRingView)
+
+        // Update the label to show completed tasks
+        completedTaskLabel?.text = "⭐️ \(Int(completedTasks))/\(Int(totalTasks)) Tasks Completed"
+
  
         
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ArticleInfo.count
@@ -118,40 +114,25 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
     // WEEKLY PROGRESS------------------------
     
     override func viewWillAppear(_ animated: Bool) {
-          let summary = HKActivitySummary();
-          let compledTasks: Double = Double(taskDataModel.getAllTasks().filter({$0.isCompleted}).count)
-          let totalTasks: Double = Double(taskDataModel.getAllTasks().count)
-          
-          let activityRingView = HKActivityRingView( frame: CGRect(x: 0.0, y: 0.0, width: 80, height: 80) )
-          
-          /// Creating Rring (Red)
-          summary.activeEnergyBurnedGoal = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: totalTasks);
-          summary.activeEnergyBurned = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: compledTasks);
-          
-          /// Set the activity summary
-          activityRingView.setActivitySummary(summary, animated: true)
-          
-          mainView.addSubview(activityRingView)
-          
-          // MARK: - Changing the Activity Details
-         ProgressInstance = taskDataModel.getAllTasks()
+        let activityRingView = HKActivityRingView(frame: CGRect(x: 0.0, y: 0.0, width: 80, height: 80))
 
+        // Calculate the percentage of completed tasks
+        let completedTasks: Double = Double(RingManager.shared.exerciseCompleted)
+        let totalTasks: Double = Double(4)
+        let completionPercentage = completedTasks / totalTasks
+
+        // Set the progress for the activity ring
+        activityRingView.setActivitySummary(
+            HKActivitySummary(),
+            animated: true
+        )
+
+        mainView.addSubview(activityRingView)
+
+        // Update the label to show completed tasks
+        completedTaskLabel?.text = "⭐️ \(Int(completedTasks))/\(Int(totalTasks)) Tasks Completed"
+        
 
     }
     
-}
-//    @objc func imageTap() {
-//        /// or push to the navigation stack
-//        let destinationVC =  self.storyboard?.instantiateViewController(withIdentifier: "Task List") as! RingViewController
-//
-//        navigationController?.pushViewController(destinationVC, animated: true)
-//        mainView.isUserInteractionEnabled = true
-//        mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.imageTap)))
-       // activityRingView.fillColor = UIColor.brown
-//               let completedTasksCount = ProgressInstance.filter({$0.isCompleted}).count
-               
-               // Cahnge the string and store in file
-//               completedTaskLabel?.text = " \(completedTasksCount)/\(ProgressInstance.count) Tasks Completed"
-//               ongoingTaskLabel?.text = " \(ProgressInstance[0].weekNumber)"
-//               upcomingTaskLabel?.text = "\(ProgressInstance[1].weekNumber)"
-       
+} 

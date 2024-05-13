@@ -1,39 +1,30 @@
 //
-//  SetViewController.swift
+//  UserDetailsViewController.swift
 //  FaceFlex
 //
-//  Created by student on 05/05/24.
+//  Created by student on 03/05/24.
 //
 
 import UIKit
 
-class SetViewController: UIViewController ,UITextFieldDelegate{
-
-    var CurrentMomentsInstance : [CurrentMoments] = CurrentMomentsManager.getAllCurrentMoments()
-   
-    @IBOutlet weak var descriptionTextField: UITextField!
+class UserDetailsViewController: UIViewController,UITextFieldDelegate {
+    /// Text field for entering the user's age.
+    @IBOutlet weak var ageTextField: UITextField!
+    /// Text field for entering the user's gender.
+    @IBOutlet weak var genderTextField: UITextField!
+    /// Text field for entering the user's name.
+    @IBOutlet weak var nameTextField: UITextField!
     
-    @IBOutlet weak var capturedImageView: UIImageView!
-    var capturedImage: UIImage?
+    
+    /// The currently active text field.
     var activeTextField: UITextField?
-    var userDescription: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let capturedImage {
-            print(capturedImage)
-        }
-        userDescription = descriptionTextField.text
-        guard let img = capturedImage else {
-            // Handle error, such as logging or presenting an alert
-            print("Error: No captured image available")
-            return
-        }
-        // Use img safely
-       // capturedImageView.image =
-       // print("Image successfully assigned to capturedImageView")
-     
-
+        // Set text field delegates
+        nameTextField.delegate = self
+        ageTextField.delegate = self
+        genderTextField.delegate = self
                
                // Register for keyboard notifications
                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -42,13 +33,10 @@ class SetViewController: UIViewController ,UITextFieldDelegate{
                // Add tap gesture recognizer to dismiss keyboard when tapping outside of text fields
                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
                view.addGestureRecognizer(tapGesture)
-        // Do any additional setup after loading the view.
+   
+        // Set focus on the name text field
+        nameTextField.becomeFirstResponder()
         
-     //  writingTextField.becomeFirstResponder()
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        capturedImageView.image = capturedImage
     }
     
     // Function to handle keyboard will show event
@@ -82,8 +70,6 @@ class SetViewController: UIViewController ,UITextFieldDelegate{
         // Function to dismiss keyboard when tapping outside of text fields
         @objc func dismissKeyboard() {
             view.endEditing(true)
-            userDescription = descriptionTextField.text
-            CurrentMomentsInstance[0].description = userDescription!
         }
         
         // UITextFieldDelegate method to set active text field
@@ -107,29 +93,67 @@ class SetViewController: UIViewController ,UITextFieldDelegate{
         deinit {
             NotificationCenter.default.removeObserver(self)
         }
-    @IBAction func doneButtonTapped(_ sender: UIBarItem) {
-         // Get the instance of JournalCollectionViewController
-         if let journalVC = presentingViewController as? JournalCollectionViewController {
-             // Pass the captured image and user description to JournalCollectionViewController
-             //journalVC.capturedImage = capturedImage
-             journalVC.userDescription = userDescription
-         }
-         // Dismiss the current view controller
-         dismiss(animated: true, completion: nil)
-     }
-
-        // Do any additional setup after loading the view.
-    }
     
+    func showAlert(message: String) {
+           let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+           let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+           alertController.addAction(okAction)
+           present(alertController, animated: true, completion: nil)
+       }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func doneButtonUserDetails(_ sender: UIBarButtonItem) {
+   
     }
-    */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Validate name field
+        guard let nameText = nameTextField.text, !nameText.isEmpty else {
+            showAlert(message: "Please fill out the name field.")
+            return
+        }
+        
+        // Validate age field
+        guard let ageText = ageTextField.text, !ageText.isEmpty else {
+            showAlert(message: "Please fill out the age field.")
+            return
+        }
+        
+        // Validate gender field
+        guard let genderText = genderTextField.text, !genderText.isEmpty else {
+            showAlert(message: "Please fill out the gender field.")
+            return
+        }
+        
+        // Create UserDetails instance with entered information
+//        let user = makePresentUser(name: nameText, age: ageText, gender: genderText)
+//       // print(user)
+        UserManager.shared.makePresentUser(name: nameText, age: ageText, gender: genderText)
+      
+    }
+    @IBAction func unwindToUserDetails(segue: UIStoryboardSegue) {
+        
+     
 
+        
+    }
 
+}
+
+//    @IBAction func doneButtonUserDetails(_ sender: UIBarButtonItem) {
+//        guard let nameText = nameTextField.text, !nameText.isEmpty else {
+//              showAlert(message: "Please fill out the name field.")
+//              return
+//          }
+//
+//          // Validate age field
+//          guard let ageText = ageTextField.text, !ageText.isEmpty else {
+//              showAlert(message: "Please fill out the age field.")
+//              return
+//          }
+//
+//          // Validate gender field
+//          guard let genderText = genderTextField.text, !genderText.isEmpty else {
+//              showAlert(message: "Please fill out the gender field.")
+//              return
+//          }
+//
+//    }

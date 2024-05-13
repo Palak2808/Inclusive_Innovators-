@@ -14,10 +14,12 @@ class FirstScreenViewController: UIViewController {
         // Additional setup
     }
     
+    /// Action method invoked when a button is clicked to navigate to the tab bar controller.
+    /// - Parameter sender: The button that triggers the action.
     @IBAction func buttonClicked(_ sender: UIButton) {
         navigateToTabBarController()
     }
-    
+    /// Navigates to the tab bar controller.
     func navigateToTabBarController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "tab") as? UITabBarController else {

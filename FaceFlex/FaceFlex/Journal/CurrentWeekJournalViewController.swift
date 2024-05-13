@@ -6,15 +6,10 @@
 //
 import UIKit
 
-class JournalCollectionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class CurrentWeekJournalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     
-    
-    
     @IBOutlet weak var journalTableView: UITableView!
-    
-    
-    
     
  
     @IBOutlet weak var imagePresentHomeJournal: UIImageView!
@@ -56,7 +51,7 @@ class JournalCollectionViewController: UIViewController, UIImagePickerController
         // Present camera interface
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true)
         
         print("Segue will be performed after capturing image")
@@ -64,28 +59,7 @@ class JournalCollectionViewController: UIViewController, UIImagePickerController
                selectedDate = Date()
     }
 
-    // MARK: - UIImagePickerControllerDelegate
-//      This codde i s tryign the indexing based image thing
-    
-    //func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        // Handle image captured by camera here
-//        if let image = info[.originalImage] as? UIImage {
-//            // Get the index of the tapped view
-//            guard let index = self.selectedIndex else { return }
-//            
-//            // Set the captured image to the image view at the corresponding index
-//            imagePresentHomeJournal[index].image = image
-//
-//            // Dismiss the image picker
-//            picker.dismiss(animated: true) { [weak self] in
-//                print("Image picker dismissed, performing segue...")
-//                // Perform segue to transition to SetImageViewContoller
-//                self?.performSegue(withIdentifier: "showSetImageViewContoller", sender: nil)
-//            }
-//        } else {
-//            picker.dismiss(animated: true, completion: nil)
-//        }
-//    }
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // Handle image captured by camera here
         if let image = info[.originalImage] as? UIImage {
@@ -93,7 +67,6 @@ class JournalCollectionViewController: UIViewController, UIImagePickerController
    
            imagePresentHomeJournal.image = image
             captured = image
-//            CurrentMomentsInstance.append(CurrentMoments(image: captured!, weekDate: selectedDate!, description: "Feeling very fresh"))
             CurrentMomentsInstance.insert(CurrentMoments(image: captured!, weekDate: selectedDate!, description: "Feeling very fresh"), at: 0)
             print(CurrentMomentsInstance)
             journalTableView.reloadData()
@@ -154,17 +127,16 @@ class JournalCollectionViewController: UIViewController, UIImagePickerController
         {
             return cell
         }
+        // Retrieve data for the current row
         let data = CurrentMomentsInstance[indexPath.row]
        
         var date = data.weekDate
-
+        // Convert date to string
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-
-        // Convert the date to a string
         let dateString = dateFormatter.string(from: date)
          
-        // Assign the string to the label's text property
+        // Assign data to cell
         cell.DayLabel.text = dateString
 //        cell.DescriptionLabel.text = userDescription
         cell.DescriptionLabel.text = data.description

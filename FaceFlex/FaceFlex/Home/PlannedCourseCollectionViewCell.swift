@@ -6,26 +6,6 @@
 //
 
 import UIKit
-//class GradientCollectionViewCell: UICollectionViewCell {
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        applyGradient()
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        applyGradient()
-//    }
-//    
-//    private func applyGradient() {
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = bounds
-//        gradientLayer.colors = [UIColor.white.cgColor, UIColor.brown.withAlphaComponent(0.1).cgColor] // Customize gradient colors as needed
-//        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
-//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
-//        layer.insertSublayer(gradientLayer, at: 0)
-//    }
-//}
 
 class PlannedCourseCollectionViewCell: UICollectionViewCell {
   
@@ -44,27 +24,21 @@ class PlannedCourseCollectionViewCell: UICollectionViewCell {
             super.init(frame: frame)
             setupContentViewConstraints()
         }
-
+    // Required initialization method when creating cell from storyboard or xib
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
             setupContentViewConstraints()
             applyGradient()
         }
     
+    // Additional setup when the cell is loaded from the storyboard or xib
     override func awakeFromNib() {
         super.awakeFromNib()
         applyGradient()
         setupContentViewConstraints()
     }
     
-//    private func applyGradient() {
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = bounds
-//        gradientLayer.colors = [UIColor.white.cgColor, UIColor.brown.withAlphaComponent(0.0000001).cgColor] // Customize gradient colors as needed
-//        gradientLayer.startPoint = CGPoint(x: 0.3, y: 1.0)
-//        gradientLayer.endPoint = CGPoint(x: 0.3, y: 0.0)
-//        layer.insertSublayer(gradientLayer, at: 0)
-//    }
+    // Additional setup when the cell is loaded from the storyboard or xib
     private func applyGradient() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
@@ -80,37 +54,12 @@ class PlannedCourseCollectionViewCell: UICollectionViewCell {
         layer.insertSublayer(gradientLayer, at: 0)
     }
 
-
+    // Set up constraints for the cell's content view
         private func setupContentViewConstraints() {
             contentView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 contentView.widthAnchor.constraint(equalToConstant: self.frame.size.width - 50), // Set your desired width
                 contentView.heightAnchor.constraint(equalToConstant: 200) // Set your desired height
             ])
-            
-            
-//            
-//            wrinkleImage.translatesAutoresizingMaskIntoConstraints = false
-//            contentView.addSubview(wrinkleImage)
-//            exerciseLabel.translatesAutoresizingMaskIntoConstraints = false
-//                   contentView.addSubview(exerciseLabel)
-//            courseNameLabel.translatesAutoresizingMaskIntoConstraints = false
-//                   contentView.addSubview(courseNameLabel)
         }
-    
-   // func setup(_ item: ListItem) {
-      //  wrinkleImage.image = UIImage(named: item.image)
-     //   exerciseLabel.text = item.label1
-       
-//        
-//        wrinkleImage.layer.cornerRadius = 15 // Adjust the corner radius as needed
-//        wrinkleImage.clipsToBounds = true
-//        
-//        
-//        
-//
-//    }
-    
-    
-    
 }

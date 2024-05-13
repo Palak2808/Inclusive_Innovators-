@@ -11,35 +11,31 @@ import CoreML
 
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, AVSpeechSynthesizerDelegate {
     
-    var selectedExerciseLabel: String?
-    var selectedExerciseNumber: String?
-    var selectedExercise: Exercises?
+    var selectedExerciseLabel: String? // Label for the selected exercise
+        var selectedExerciseNumber: String? // Number for the selected exercise
+        var selectedExercise: Exercises? // Selected exercise object
+        var ffmodel: FFModel! // CoreML model for exercise detection
+        var isCameraAccessAllowed = false // Flag indicating camera access permission
+        var speechSynthesizer = AVSpeechSynthesizer() // Speech synthesizer for providing exercise instructions
+        let speechSynthesizerQueue = DispatchQueue(label: "com.faceflex.speechsynthesizer") // Dispatch queue for speech synthesizer
     
-    var ffmodel : FFModel!
-    var isCameraAccessAllowed = false
-    let ExercisesInstance : [Exercises] = ExerciseManager.getExercise()
-    var speechSynthesizer = AVSpeechSynthesizer()
-    let speechSynthesizerQueue = DispatchQueue(label: "com.faceflex.speechsynthesizer")
+    @IBOutlet weak var videoPlayerView: UIView! // View to display video instructions
     
-    @IBOutlet weak var videoPlayerView: UIView!
-    var player: AVPlayer?
-       var playerLayer: AVPlayerLayer?
-
-    
-    
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var cameraView: UIView!
-    var captureSession = AVCaptureSession()
-    var sessionOutput =  AVCapturePhotoOutput()
-    var previewLayer =  AVCaptureVideoPreviewLayer()
-    var isNotWorking: Bool = false
-    var frameCount: Int = 0
-    var workingTimeStart: Date?
-    let workingTimeThreshold: TimeInterval = 2.0
+    @IBOutlet weak var button: UIButton! // Button for user interaction
+    @IBOutlet weak var cameraView: UIView! // View to display camera feed
+    var captureSession = AVCaptureSession() // Camera capture session
+        var sessionOutput = AVCapturePhotoOutput() // Session output
+        var previewLayer = AVCaptureVideoPreviewLayer() // Preview layer for camera feed
+        var player: AVPlayer? // Player for video instructions
+        var playerLayer: AVPlayerLayer? // Player layer for video instructions
+        var isNotWorking: Bool = false // Flag indicating if the user is not performing the exercise
+        var frameCount: Int = 0 // Frame count for exercise detection
+        var workingTimeStart: Date? // Start time for detecting user inactivity
+        let workingTimeThreshold: TimeInterval = 2.0 // Threshold for detecting user inactivity
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Pucker Up"
+        navigationItem.title = "Pucker Up" // Set navigation title
         
         guard let videoURL = Bundle.main.url(forResource: "exerciseVideo", withExtension: "mp4") else {
                     print("Video file not found")
@@ -59,33 +55,18 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                 player?.play()
         
         
-        
+        // Initialize CoreML model for exercise detection
         do {
             ffmodel = try FFModel(configuration: MLModelConfiguration())
         } catch {
             print("Error Configuring ML Model! \(error)")
         }
+        
+        // Configure camera and video playback
         configureCamera()
         pauseVideo()
         speechSynthesizer.delegate = self
-        
-//        if let exerciseNumber = selectedExerciseNumber {
-//                   // Find the corresponding exercise in ExercisesInfo
-//                   selectedExercise = ExerciseManager.ExercisesInfo.first(where: { $0.exerciseNumber == exerciseNumber })
-//                   // Populate UI elements with exercise data
-//                   if let exercise = selectedExercise {
-//                       exerciseNumberLabel.text = exercise.exerciseNumber
-//                       exerciseImageView.image = UIImage(named: exercise.exerciseImage)
-//                       exerciseHeadingLabel.text = exercise.exerciseHeadingText
-//                       exerciseDescriptionLabel.text = exercise.exerciseDescriptionText
-//                   }
-//               }
-        
-        
     }
-    
-    
-    
     func showAlert(title: String, message: String) {
            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
@@ -109,14 +90,19 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
            player?.play()
        }
     
-    func speakPuckerUpInstructions() {
-        let speechUtterance = AVSpeechUtterance(string: "For the Pucker Up exercise, puff your cheeks and hold the air for 5 seconds. Then release the air slowly. Repeat this process 10 times.")
-        if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.tts.voice.samantha") {
-        speechUtterance.voice = voice
-       } else {
-            print("Female voice not available")
-        }
-        speechUtterance.rate = 0.6 // More natural speech rate
+    
+        func speakPuckerUpInstructions() {
+            let speechUtterance = AVSpeechUtterance(string: "For the Pucker Up exercise, puff your cheeks and hold the air for 5 seconds. Then release the air slowly. Repeat this process 10 times.")
+                if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.tts.voice.samantha.en-US")
+                  {
+                    speechUtterance.voice = voice
+                    
+                  } 
+                else
+                    {
+                        print("Female voice not available")
+                    }
+        speechUtterance.rate = 0.4 // More natural speech rate
         self.speechSynthesizer.speak(speechUtterance)
    }
 
@@ -126,19 +112,20 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showAlert(title: "Ready to Start?", message: "Are you ready to start the workout?")
-        startCameraSession()
+        startCameraSession()  // Start camera session
         
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        stopCameraSession()
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopCameraSession() // Stop camera session when the view disappears
+    }
+    
+    
+    // Handle camera output and exercise detection
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        
         frameCount += 1
-        
-        
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
@@ -175,7 +162,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                                 {
                                     print("its working too")
                                     DispatchQueue.main.async{
-                                        print("this thing is working??")
+                                        print("this Dispatch  is working??")
                                         self.showAlert(title: "Alert", message: "Please move , you are not doing anything")
                                         self.workingTimeStart = Date()
                                     }
@@ -261,15 +248,22 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             previewLayer.connection?.videoOrientation = .portrait
             previewLayer.frame = cameraView.bounds
             cameraView.layer.addSublayer(previewLayer)
-            captureSession.startRunning()
+//            captureSession.startRunning()
+      
+                   // Call startRunning() on the background queue
+                   self.captureSession.startRunning()
+               
         }
         
         func startCameraSession() {
             // Start the camera session only if camera access is allowed
             guard isCameraAccessAllowed else { return }
             guard !captureSession.isRunning else { return } // Check if session is already running
-            
-            captureSession.startRunning()
+           
+                   // Call startRunning() on the background queue
+                   self.captureSession.startRunning()
+               
+           // captureSession.startRunning()
         }
         
         
@@ -277,296 +271,36 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         func stopCameraSession() {
             // Stop the camera session if it's running
             if captureSession.isRunning {
-                captureSession.stopRunning()
+                captureSession.stopRunning() //stop camera session
             }
         }
     
-
-    
-    
-    @IBAction func doneTapped(_ sender: Any) {
-        let exercise =
-//        print(exercise)
-        ExerciseManager.markExerciseCompleted(name: "Air Puff Exercise")
+    @IBAction func ExerciseToCameraSegue(segue: UIStoryboardSegue)  // Action for unwinding segue from exercise selection
+    {
+        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
-
+    // Action for tapping the done button
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        ExerciseManager.shared.isExerciseCompleted(name: selectedExerciseLabel ?? "Cheek Lifter")
+        performSegue(withIdentifier: "unwindToSourceViewController", sender: self)
         
         
     }
-
-
-
-
-
-
-
-
-
-
-
-//    func configureCamera() {
-//            do{
-//                ffmodel = try FFModel(configuration: MLModelConfiguration())
-//                do {
-//                    ffmodel = try FFModel(configuration: MLModelConfiguration())
-//                } catch {
-//                    print("Error initializingFF Model \(error)")
-//                }
-//            } catch{
-//                print("Error initializing FF Model \(error)")
-//            }
-//
-//            // Setup camera session for drowsiness detection
-//            captureSession = AVCaptureSession()
-////            guard let captureSession1 = captureSession  else {
-////                print("Failed to create AVCaptureSession")
-////                return
-////            }
-//
-//            guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
-//                print("Failed to get the front camera device")
-//                return
-//            }
-//
-//            do {
-//                let input = try AVCaptureDeviceInput(device: frontCamera)
-//                captureSession.addInput(input)
-//            } catch {
-//                print("Error configuring camera input: \(error)")
-//                return
-//            }
-//
-//            let output = AVCaptureVideoDataOutput()
-//            output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-//            output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-//
-//            captureSession.addOutput(output)
-//            captureSession.startRunning()
-//        }
     
+    // Prepare for navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        ExerciseManager.shared.isExerciseCompleted(name: selectedExerciseLabel ?? "Cheek Lifter")
+    }
+}
 
 
-//    func showAlertt(title: String, message: String) {
-//        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//            // Resume video playback when the user taps "OK"
-//            self.player?.play()
-//        }))
-//
-//        // Pause video playback when the warning alert is displayed
-//        player?.pause()
-//
-//        present(alertController, animated: true, completion: nil)
-//    }
-        
-        
-//        func showAlert(title: String, message: String) {
-//            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            present(alertController, animated: true, completion: nil)
-//        }
 
 
-//    func speakText(_ text: String) {
-//           // Speak the provided text
-//        let speechUtterance = AVSpeechUtterance(string: text)
-//            speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US") // Set language to English
-//            speechUtterance.voice = AVSpeechSynthesisVoice(identifier: AVSpeechSynthesisVoiceIdentifierAlex) // Female voice
-//            speechUtterance.rate = 0.5 // Set speech rate to slower
-//            speechSynthesizer.speak(speechUtterance)
-//       }
-        //    var captureSession = AVCaptureSession()
-        //      var sessionOutput = AVCapturePhotoOutput()
-        //      var previewLayer = AVCaptureVideoPreviewLayer()
-        //
-        //
-        //        var isNotWorking: Bool = false
-        //        var frameCount: Int = 0
-        //        var workingTimeStart: Date?
-        //        let workingTimeThreshold: TimeInterval = 4.0
-        //
-        ////      var noObjectTimer: Timer?
-        ////      let noObjectDetectionThreshold = 3.0 // Threshold for consecutive "NoObject" detections
-        ////      var consecutiveNoObjectCount = 0
-        ////      var frameCount = 0
-        //
-        //      override func viewDidLoad() {
-        //          super.viewDidLoad()
-        //
-        //          do {
-        //              ffmodel = try FFModel(configuration: MLModelConfiguration())
-        //          } catch {
-        //              print("Error Configuring ML Model! \(error)")
-        //          }
-        //          configureCamera()
-        //      }
-        //
-        //      override func viewWillAppear(_ animated: Bool) {
-        //          super.viewWillAppear(animated)
-        //          startCameraSession()
-        //      }
-        //
-        //      override func viewWillDisappear(_ animated: Bool) {
-        //          super.viewWillDisappear(animated)
-        //          stopCameraSession()
-        //      }
-        //
-        //    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        //        frameCount += 1
-        //
-        //
-        //        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
-        //            return
-        //        }
-        //
-        //        do {
-        //            let input1 = FFModelInput(image: pixelBuffer)
-        //            let prediction = try ffmodel.prediction(input: input1)
-        //            let outputString = prediction.target
-        //
-        //
-        //            if outputString == "Object"
-        //            {
-        //                do
-        //                {
-        //                    let input = FFModelInput(image: pixelBuffer)
-        //                    let prediction = try ffmodel.prediction(input: input)
-        //                                     let outputString = prediction.target
-        //
-        //                                     // Handle the prediction results as needed
-        //                                     print("Output String: \(outputString)")
-        //                    if outputString == "NoObject"
-        //                    {
-        //                        if isNotWorking
-        //                        {
-        //                            // not working detected
-        //                            if let startTime = workingTimeStart
-        //                            {
-        //                                let finishTime = Date().timeIntervalSince(startTime)
-        //                                if finishTime >= workingTimeThreshold
-        //                                {
-        //                                    DispatchQueue.main.async{
-        //                                        showAlert(title: "Alert", message: "Please move , you are not doing anything")
-        //                                    }
-        //                                }
-        //
-        //                            }
-        //                            else
-        //                            {
-        //                                //starts tracking no work
-        //                                workingTimeStart = Date()
-        //                            }
-        //                        }
-        //                        else{
-        //                            isNotWorking = true
-        //                            workingTimeStart = Date()
-        //
-        //                        }
-        //                    }
-        //                    else
-        //                    {
-        //                        //reset no hand detection
-        //                        isNotWorking = false
-        //                        workingTimeStart = nil
-        //                    }
-        //                }
-        //                catch
-        //                {
-        //                    print("Error making predictions: /(error)")
-        //                }
-        //    }
-        //
-        //    }
-        //
-        //
-        //
-        ////      @objc func handleNoObjectDetection() {
-        ////          showAlert(title: "Alert", message: "You are not doing exercise!")
-        ////          // Reset consecutive no object count and invalidate the timer
-        //////          consecutiveNoObjectCount = 0
-        //////          noObjectTimer?.invalidate()
-        //////          noObjectTimer = nil
-        ////      }
-        //
-        //      func configureCamera() {
-        //          AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
-        //              guard let self = self else { return }
-        //              if granted {
-        //                  self.isCameraAccessAllowed = true
-        //                  DispatchQueue.main.async {
-        //                      self.setupCameraSession()
-        //                  }
-        //              } else {
-        //                  self.isCameraAccessAllowed = false
-        //                  DispatchQueue.main.async {
-        //                      // Present an alert or navigate to a screen explaining the need for camera access
-        //                      self.showAlert(title: "Camera Access Denied", message: "Please grant access to the camera in Settings to use this feature.")
-        //                  }
-        //              }
-        //          }
-        //      }
-        //
-        //      func setupCameraSession() {
-        //          // Configure the camera session only if camera access is allowed
-        //          guard isCameraAccessAllowed else { return }
-        //
-        //          // Your existing camera setup code
-        //          guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else { return }
-        //
-        //          do {
-        //              let input = try AVCaptureDeviceInput(device: frontCamera)
-        //              captureSession.addInput(input)
-        //          } catch {
-        //              print("Error configuring camera: \(error)")
-        //              return
-        //          }
-        //
-        //          let output = AVCaptureVideoDataOutput()
-        //          output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-        //          output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-        //
-        //          captureSession.addOutput(output)
-        //
-        //          previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        //          previewLayer.videoGravity = .resizeAspectFill
-        //          previewLayer.connection?.videoOrientation = .portrait
-        //          previewLayer.frame = cameraView.bounds
-        //          cameraView.layer.addSublayer(previewLayer)
-        //          captureSession.startRunning()
-        //      }
-        //
-        //      func startCameraSession() {
-        //          // Start the camera session only if camera access is allowed
-        //          guard isCameraAccessAllowed else { return }
-        //          guard !captureSession.isRunning else { return } // Check if session is already running
-        //
-        //          captureSession.startRunning()
-        //      }
-        //
-        //      func stopCameraSession() {
-        //          // Stop the camera session if it's running
-        //          if captureSession.isRunning {
-        //              captureSession.stopRunning()
-        //          }
-        //      }
-        //
-        //      func showAlert(title: String, message: String) {
-        //          let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        //          alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        //          present(alertController, animated: true, completion: nil)
-        //      }
-        //  }
-    
+
+
+
+
+
+
+

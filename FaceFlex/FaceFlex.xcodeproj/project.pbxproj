@@ -7,20 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F04197F2BE7DD6A00243BFF /* AllTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F04197E2BE7DD6A00243BFF /* AllTipsViewController.swift */; };
 		3F0419822BE7EC0600243BFF /* NewProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0419812BE7EC0600243BFF /* NewProfileTableViewController.swift */; };
-		3F0419842BE7EC1900243BFF /* NewEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0419832BE7EC1900243BFF /* NewEditProfileTableViewController.swift */; };
 		3F05A3782BE78B7600DAFEC5 /* QuickWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05A3772BE78B7600DAFEC5 /* QuickWorkoutsViewController.swift */; };
 		3F05A37A2BE78BA000DAFEC5 /* QuickWorkoutsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05A3792BE78BA000DAFEC5 /* QuickWorkoutsTableViewCell.swift */; };
 		3F0958A42BE4E62000CCC8A7 /* FFModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F0958A32BE4E62000CCC8A7 /* FFModel.mlmodel */; };
 		3F0958A72BE4E7CA00CCC8A7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0958A62BE4E7CA00CCC8A7 /* CameraViewController.swift */; };
-		3F1416B22BE49866001FA39C /* WeeklyTipsStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416B12BE49866001FA39C /* WeeklyTipsStructure.swift */; };
 		3F1416B92BE4A04A001FA39C /* AllWeeklyTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416B82BE4A04A001FA39C /* AllWeeklyTipsViewController.swift */; };
 		3F1416BB2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416BA2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift */; };
 		3F1416BD2BE4A816001FA39C /* AllWeeklyTipsStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1416BC2BE4A816001FA39C /* AllWeeklyTipsStructure.swift */; };
-		3F16D1C02BE2568300E3BB73 /* JourWriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */; };
-		3F1BD3D42BE41D1D00C27B06 /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BD3D32BE41D1D00C27B06 /* calendarViewController.swift */; };
-		3F2A76AE2BED1D410020DC2E /* FinalTipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A76AD2BED1D410020DC2E /* FinalTipsTableViewController.swift */; };
+		3F16D1C02BE2568300E3BB73 /* JournalWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16D1BF2BE2568300E3BB73 /* JournalWriteViewController.swift */; };
 		3F2A76B02BED23260020DC2E /* SkinTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A76AF2BED23260020DC2E /* SkinTypeViewController.swift */; };
 		3F2A8B542BEDDB4A00E61997 /* TipsFinalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A8B532BEDDB4A00E61997 /* TipsFinalTableViewCell.swift */; };
 		3F32BB492BEDD693002D1AA2 /* TipsFinalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F32BB482BEDD693002D1AA2 /* TipsFinalTableViewController.swift */; };
@@ -28,7 +23,6 @@
 		3F4297452BE1FB6A00510CAD /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3F4297442BE1FB6A00510CAD /* FSCalendar */; };
 		3F4B09372BE76E300043C0EB /* RingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B09362BE76E300043C0EB /* RingTableViewCell.swift */; };
 		3F4C71082BE11B7A0028F87E /* MomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */; };
-		3F4FA0B72BE55A8600CDB63C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FA0B62BE55A8600CDB63C /* EditProfileViewController.swift */; };
 		3F5377612BEE2BB0008B713C /* videoo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3F5377602BEE2AFF008B713C /* videoo.mp4 */; };
 		3F5394022BE8B0480048EE27 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5394012BE8B0480048EE27 /* FirstScreenViewController.swift */; };
 		3F5394032BE8E7CA0048EE27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6CD85D2BD789590080A0D8 /* Main.storyboard */; };
@@ -42,13 +36,11 @@
 		3F76822F2BE36329000EB208 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76822E2BE36329000EB208 /* ExerciseViewController.swift */; };
 		3F7682312BE3633A000EB208 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7682302BE3633A000EB208 /* ExerciseTableViewCell.swift */; };
 		3F8577FF2BECD49000257AA0 /* JournalCurrentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8577FE2BECD49000257AA0 /* JournalCurrentTableViewCell.swift */; };
-		3F97B6582BDB822D0065207E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97B6572BDB822D0065207E /* ProfileViewController.swift */; };
 		3F99E6942BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */; };
 		3FB7E4432BE6C75100B54A78 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7E4422BE6C75100B54A78 /* SetViewController.swift */; };
-		3FBC95FD2BE895DE00B94373 /* FurtherTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC95FC2BE895DE00B94373 /* FurtherTipViewController.swift */; };
 		3FBCC1412BDA38E400744372 /* HomeStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC1402BDA38E400744372 /* HomeStructure.swift */; };
 		3FBD58212BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD58202BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift */; };
-		3FC8BDFC2BE0A86F0045EABF /* JournalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */; };
+		3FC8BDFC2BE0A86F0045EABF /* CurrentWeekJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8BDFB2BE0A86F0045EABF /* CurrentWeekJournalViewController.swift */; };
 		3FDBAA782BE265F300EAC5FD /* PreviousWeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */; };
 		3FDE72F52BDA42CF003CC57C /* LibraryStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */; };
 		3FDE72F92BDA4553003CC57C /* JounalStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE72F82BDA4553003CC57C /* JounalStructures.swift */; };
@@ -57,6 +49,7 @@
 		3FDE73012BDA5ADE003CC57C /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */; };
 		3FDF085E2BEE26490014BBD2 /* exerciseVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3FDF085D2BEE26220014BBD2 /* exerciseVideo.mp4 */; };
 		3FDF08602BEE2A9D0014BBD2 /* videoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF085F2BEE2A9D0014BBD2 /* videoViewController.swift */; };
+		3FDF70452BF1CB1C00B70C16 /* Week1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF70442BF1CB1C00B70C16 /* Week1TableViewController.swift */; };
 		3FEB9D912BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */; };
 		3FEF4AB52BE76A8300CA31E7 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEF4AB42BE76A8300CA31E7 /* RingViewController.swift */; };
 		3FFB6BB22BEB7257008FE93F /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3FFB6BB12BEB71D6008FE93F /* video2.mp4 */; };
@@ -64,27 +57,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F04197E2BE7DD6A00243BFF /* AllTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTipsViewController.swift; sourceTree = "<group>"; };
 		3F0419812BE7EC0600243BFF /* NewProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileTableViewController.swift; sourceTree = "<group>"; };
-		3F0419832BE7EC1900243BFF /* NewEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileTableViewController.swift; sourceTree = "<group>"; };
 		3F05A3772BE78B7600DAFEC5 /* QuickWorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickWorkoutsViewController.swift; sourceTree = "<group>"; };
 		3F05A3792BE78BA000DAFEC5 /* QuickWorkoutsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickWorkoutsTableViewCell.swift; sourceTree = "<group>"; };
 		3F0958A32BE4E62000CCC8A7 /* FFModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FFModel.mlmodel; sourceTree = "<group>"; };
 		3F0958A62BE4E7CA00CCC8A7 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		3F1416B12BE49866001FA39C /* WeeklyTipsStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTipsStructure.swift; sourceTree = "<group>"; };
 		3F1416B82BE4A04A001FA39C /* AllWeeklyTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllWeeklyTipsViewController.swift; path = "FaceFlex/Weekly Tips/AllWeeklyTipsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		3F1416BA2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllWeeklyTipsTableViewCell.swift; path = "FaceFlex/Weekly Tips/AllWeeklyTipsTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		3F1416BC2BE4A816001FA39C /* AllWeeklyTipsStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllWeeklyTipsStructure.swift; path = "FaceFlex/Weekly Tips/AllWeeklyTipsStructure.swift"; sourceTree = SOURCE_ROOT; };
-		3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourWriViewController.swift; sourceTree = "<group>"; };
-		3F1BD3D32BE41D1D00C27B06 /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
-		3F2A76AD2BED1D410020DC2E /* FinalTipsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTipsTableViewController.swift; sourceTree = "<group>"; };
+		3F16D1BF2BE2568300E3BB73 /* JournalWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalWriteViewController.swift; sourceTree = "<group>"; };
 		3F2A76AF2BED23260020DC2E /* SkinTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeViewController.swift; sourceTree = "<group>"; };
 		3F2A8B532BEDDB4A00E61997 /* TipsFinalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsFinalTableViewCell.swift; sourceTree = "<group>"; };
 		3F32BB482BEDD693002D1AA2 /* TipsFinalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsFinalTableViewController.swift; sourceTree = "<group>"; };
 		3F4183B12BE0FBAB003DD71B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		3F4B09362BE76E300043C0EB /* RingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTableViewCell.swift; sourceTree = "<group>"; };
 		3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentTableViewCell.swift; sourceTree = "<group>"; };
-		3F4FA0B62BE55A8600CDB63C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		3F5377602BEE2AFF008B713C /* videoo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoo.mp4; sourceTree = "<group>"; };
 		3F5394012BE8B0480048EE27 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		3F6CD8542BD789590080A0D8 /* FaceFlex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFlex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,13 +86,11 @@
 		3F76822E2BE36329000EB208 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		3F7682302BE3633A000EB208 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		3F8577FE2BECD49000257AA0 /* JournalCurrentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCurrentTableViewCell.swift; sourceTree = "<group>"; };
-		3F97B6572BDB822D0065207E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3F99E6932BD90253002C1C4C /* PlannedCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedCourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FB7E4422BE6C75100B54A78 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
-		3FBC95FC2BE895DE00B94373 /* FurtherTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurtherTipViewController.swift; sourceTree = "<group>"; };
 		3FBCC1402BDA38E400744372 /* HomeStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStructure.swift; sourceTree = "<group>"; };
 		3FBD58202BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedCourseCollectionViewController.swift; sourceTree = "<group>"; };
-		3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewController.swift; sourceTree = "<group>"; };
+		3FC8BDFB2BE0A86F0045EABF /* CurrentWeekJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeekJournalViewController.swift; sourceTree = "<group>"; };
 		3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousWeeksViewController.swift; sourceTree = "<group>"; };
 		3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStructures.swift; sourceTree = "<group>"; };
 		3FDE72F82BDA4553003CC57C /* JounalStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JounalStructures.swift; sourceTree = "<group>"; };
@@ -114,6 +99,7 @@
 		3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
 		3FDF085D2BEE26220014BBD2 /* exerciseVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = exerciseVideo.mp4; sourceTree = "<group>"; };
 		3FDF085F2BEE2A9D0014BBD2 /* videoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoViewController.swift; sourceTree = "<group>"; };
+		3FDF70442BF1CB1C00B70C16 /* Week1TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week1TableViewController.swift; sourceTree = "<group>"; };
 		3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAdditionalSkincareollectionViewCell.swift; sourceTree = "<group>"; };
 		3FEF4AB42BE76A8300CA31E7 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
 		3FFB6BB12BEB71D6008FE93F /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
@@ -132,13 +118,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F0419802BE7EBE100243BFF /* New Profile */ = {
+		3F0419802BE7EBE100243BFF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				3F0419812BE7EC0600243BFF /* NewProfileTableViewController.swift */,
-				3F0419832BE7EC1900243BFF /* NewEditProfileTableViewController.swift */,
+				3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */,
 			);
-			path = "New Profile";
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		3F05A3722BE786E700DAFEC5 /* Quick Workouts */ = {
@@ -158,23 +144,15 @@
 			path = cameraExercise;
 			sourceTree = "<group>";
 		};
-		3F1416B02BE497FE001FA39C /* Weekly Tips */ = {
-			isa = PBXGroup;
-			children = (
-				3F1416B12BE49866001FA39C /* WeeklyTipsStructure.swift */,
-				3F04197E2BE7DD6A00243BFF /* AllTipsViewController.swift */,
-			);
-			path = "Weekly Tips";
-			sourceTree = "<group>";
-		};
 		3F1416B72BE4A020001FA39C /* All Weekly Tips */ = {
 			isa = PBXGroup;
 			children = (
 				3F1416B82BE4A04A001FA39C /* AllWeeklyTipsViewController.swift */,
-				3F1416BC2BE4A816001FA39C /* AllWeeklyTipsStructure.swift */,
-				3F2A76AD2BED1D410020DC2E /* FinalTipsTableViewController.swift */,
-				3FBC95FC2BE895DE00B94373 /* FurtherTipViewController.swift */,
 				3F1416BA2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift */,
+				3F32BB482BEDD693002D1AA2 /* TipsFinalTableViewController.swift */,
+				3F2A8B532BEDDB4A00E61997 /* TipsFinalTableViewCell.swift */,
+				3FDF70442BF1CB1C00B70C16 /* Week1TableViewController.swift */,
+				3F1416BC2BE4A816001FA39C /* AllWeeklyTipsStructure.swift */,
 			);
 			path = "All Weekly Tips";
 			sourceTree = "<group>";
@@ -207,47 +185,38 @@
 		3F6CD8562BD789590080A0D8 /* FaceFlex */ = {
 			isa = PBXGroup;
 			children = (
-				3F0419802BE7EBE100243BFF /* New Profile */,
+				3FBA73802BF1FF29006C2345 /* Videos */,
+				3F0419802BE7EBE100243BFF /* Profile */,
 				3F05A3722BE786E700DAFEC5 /* Quick Workouts */,
 				3F4B09352BE76DF60043C0EB /* Ring */,
 				3F0958A52BE4E7B700CCC8A7 /* cameraExercise */,
 				3F1416B72BE4A020001FA39C /* All Weekly Tips */,
-				3F1416B02BE497FE001FA39C /* Weekly Tips */,
 				3F76822D2BE362C3000EB208 /* Exercise */,
-				3F7682282BE3523C000EB208 /* Desired Goal */,
-				3FDE72FB2BDA460B003CC57C /* Profile */,
+				3F7682282BE3523C000EB208 /* Starting Screens Quessionaire */,
 				3FDE72F72BDA453D003CC57C /* Journal */,
 				3F8AD9CD2BDA2F1F00D569EE /* Home */,
 				3F8AD9CC2BDA2F1100D569EE /* Library */,
-				3FFCC1622BE51996001DE7F7 /* UserDetailsViewController.swift */,
-				3F4FA0B62BE55A8600CDB63C /* EditProfileViewController.swift */,
 				3F6CD8572BD789590080A0D8 /* AppDelegate.swift */,
 				3F6CD8592BD789590080A0D8 /* SceneDelegate.swift */,
-				3F32BB482BEDD693002D1AA2 /* TipsFinalTableViewController.swift */,
-				3F2A8B532BEDDB4A00E61997 /* TipsFinalTableViewCell.swift */,
 				3F6CD85B2BD789590080A0D8 /* ViewController.swift */,
-				3F2A76AF2BED23260020DC2E /* SkinTypeViewController.swift */,
 				3F6CD85D2BD789590080A0D8 /* Main.storyboard */,
-				3FDF085F2BEE2A9D0014BBD2 /* videoViewController.swift */,
-				3F5394012BE8B0480048EE27 /* FirstScreenViewController.swift */,
-				3FB7E4422BE6C75100B54A78 /* SetViewController.swift */,
-				3FFB6BB12BEB71D6008FE93F /* video2.mp4 */,
 				3F0958A32BE4E62000CCC8A7 /* FFModel.mlmodel */,
 				3F6CD8602BD7895B0080A0D8 /* Assets.xcassets */,
-				3F5377602BEE2AFF008B713C /* videoo.mp4 */,
-				3FDF085D2BEE26220014BBD2 /* exerciseVideo.mp4 */,
 				3F6CD8622BD7895B0080A0D8 /* LaunchScreen.storyboard */,
 				3F6CD8652BD7895B0080A0D8 /* Info.plist */,
 			);
 			path = FaceFlex;
 			sourceTree = "<group>";
 		};
-		3F7682282BE3523C000EB208 /* Desired Goal */ = {
+		3F7682282BE3523C000EB208 /* Starting Screens Quessionaire */ = {
 			isa = PBXGroup;
 			children = (
 				3F7682292BE35252000EB208 /* GoalViewController.swift */,
+				3FFCC1622BE51996001DE7F7 /* UserDetailsViewController.swift */,
+				3F2A76AF2BED23260020DC2E /* SkinTypeViewController.swift */,
+				3F5394012BE8B0480048EE27 /* FirstScreenViewController.swift */,
 			);
-			path = "Desired Goal";
+			path = "Starting Screens Quessionaire";
 			sourceTree = "<group>";
 		};
 		3F76822D2BE362C3000EB208 /* Exercise */ = {
@@ -263,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				3FDE72F42BDA42CF003CC57C /* LibraryStructures.swift */,
+				3FDF085F2BEE2A9D0014BBD2 /* videoViewController.swift */,
 				3FDE72FE2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift */,
 				3FDE73002BDA5ADE003CC57C /* WorkoutsViewController.swift */,
 				3FEB9D902BDF525F0064F602 /* CAdditionalSkincareollectionViewCell.swift */,
@@ -281,27 +251,28 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		3FBA73802BF1FF29006C2345 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				3F5377602BEE2AFF008B713C /* videoo.mp4 */,
+				3FDF085D2BEE26220014BBD2 /* exerciseVideo.mp4 */,
+				3FFB6BB12BEB71D6008FE93F /* video2.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		3FDE72F72BDA453D003CC57C /* Journal */ = {
 			isa = PBXGroup;
 			children = (
 				3FDE72F82BDA4553003CC57C /* JounalStructures.swift */,
-				3F16D1BF2BE2568300E3BB73 /* JourWriViewController.swift */,
-				3FC8BDFB2BE0A86F0045EABF /* JournalCollectionViewController.swift */,
-				3F1BD3D32BE41D1D00C27B06 /* calendarViewController.swift */,
+				3F16D1BF2BE2568300E3BB73 /* JournalWriteViewController.swift */,
+				3FC8BDFB2BE0A86F0045EABF /* CurrentWeekJournalViewController.swift */,
 				3F8577FE2BECD49000257AA0 /* JournalCurrentTableViewCell.swift */,
 				3F4C71072BE11B7A0028F87E /* MomentTableViewCell.swift */,
+				3FB7E4422BE6C75100B54A78 /* SetViewController.swift */,
 				3FDBAA772BE265F300EAC5FD /* PreviousWeeksViewController.swift */,
 			);
 			path = Journal;
-			sourceTree = "<group>";
-		};
-		3FDE72FB2BDA460B003CC57C /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				3FDE72FC2BDA4A05003CC57C /* profileStructures.swift */,
-				3F97B6572BDB822D0065207E /* ProfileViewController.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,7 +359,6 @@
 				3FDE72F52BDA42CF003CC57C /* LibraryStructures.swift in Sources */,
 				3F4B09372BE76E300043C0EB /* RingTableViewCell.swift in Sources */,
 				3F76822F2BE36329000EB208 /* ExerciseViewController.swift in Sources */,
-				3F2A76AE2BED1D410020DC2E /* FinalTipsTableViewController.swift in Sources */,
 				3F1416B92BE4A04A001FA39C /* AllWeeklyTipsViewController.swift in Sources */,
 				3F2A76B02BED23260020DC2E /* SkinTypeViewController.swift in Sources */,
 				3F76822A2BE35252000EB208 /* GoalViewController.swift in Sources */,
@@ -396,22 +366,18 @@
 				3FDE72F92BDA4553003CC57C /* JounalStructures.swift in Sources */,
 				3FDE72FD2BDA4A05003CC57C /* profileStructures.swift in Sources */,
 				3F0958A72BE4E7CA00CCC8A7 /* CameraViewController.swift in Sources */,
-				3F97B6582BDB822D0065207E /* ProfileViewController.swift in Sources */,
 				3F1416BD2BE4A816001FA39C /* AllWeeklyTipsStructure.swift in Sources */,
 				3FDE72FF2BDA5ACB003CC57C /* WorkoutsCollectionViewCell.swift in Sources */,
-				3F1BD3D42BE41D1D00C27B06 /* calendarViewController.swift in Sources */,
 				3F6CD85C2BD789590080A0D8 /* ViewController.swift in Sources */,
 				3FBCC1412BDA38E400744372 /* HomeStructure.swift in Sources */,
 				3F4C71082BE11B7A0028F87E /* MomentTableViewCell.swift in Sources */,
 				3F0419822BE7EC0600243BFF /* NewProfileTableViewController.swift in Sources */,
-				3F4FA0B72BE55A8600CDB63C /* EditProfileViewController.swift in Sources */,
 				3F1416BB2BE4A05F001FA39C /* AllWeeklyTipsTableViewCell.swift in Sources */,
 				3F6CD8582BD789590080A0D8 /* AppDelegate.swift in Sources */,
+				3FDF70452BF1CB1C00B70C16 /* Week1TableViewController.swift in Sources */,
 				3F05A37A2BE78BA000DAFEC5 /* QuickWorkoutsTableViewCell.swift in Sources */,
-				3F1416B22BE49866001FA39C /* WeeklyTipsStructure.swift in Sources */,
-				3FC8BDFC2BE0A86F0045EABF /* JournalCollectionViewController.swift in Sources */,
+				3FC8BDFC2BE0A86F0045EABF /* CurrentWeekJournalViewController.swift in Sources */,
 				3F8577FF2BECD49000257AA0 /* JournalCurrentTableViewCell.swift in Sources */,
-				3F04197F2BE7DD6A00243BFF /* AllTipsViewController.swift in Sources */,
 				3F0958A42BE4E62000CCC8A7 /* FFModel.mlmodel in Sources */,
 				3F7682312BE3633A000EB208 /* ExerciseTableViewCell.swift in Sources */,
 				3F4183B22BE0FBAB003DD71B /* ArticleTableViewCell.swift in Sources */,
@@ -423,14 +389,12 @@
 				3F32BB492BEDD693002D1AA2 /* TipsFinalTableViewController.swift in Sources */,
 				3F5394022BE8B0480048EE27 /* FirstScreenViewController.swift in Sources */,
 				3F05A3782BE78B7600DAFEC5 /* QuickWorkoutsViewController.swift in Sources */,
-				3F0419842BE7EC1900243BFF /* NewEditProfileTableViewController.swift in Sources */,
 				3FBD58212BDAD29400BE44E1 /* PlannedCourseCollectionViewController.swift in Sources */,
 				3F6CD85A2BD789590080A0D8 /* SceneDelegate.swift in Sources */,
 				3FB7E4432BE6C75100B54A78 /* SetViewController.swift in Sources */,
 				3FDF08602BEE2A9D0014BBD2 /* videoViewController.swift in Sources */,
-				3FBC95FD2BE895DE00B94373 /* FurtherTipViewController.swift in Sources */,
 				3FEF4AB52BE76A8300CA31E7 /* RingViewController.swift in Sources */,
-				3F16D1C02BE2568300E3BB73 /* JourWriViewController.swift in Sources */,
+				3F16D1C02BE2568300E3BB73 /* JournalWriteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,12 +17,6 @@ class WorkoutsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var numberOfExerciseLabel: UILabel!
     
     
-
-    
-    
-    
-    
-    
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupContentViewConstraints()

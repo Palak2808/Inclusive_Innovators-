@@ -10,9 +10,10 @@ import UIKit
 class AllWeeklyTipsTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var allWeeklyImage: UIImageView!
+    @IBOutlet weak var allWeeklyImage: UIImageView!   // Image view for displaying the tip image
     
-    @IBOutlet weak var allWeeklyLabel: UILabel!
+    @IBOutlet weak var allWeeklyLabel: UILabel!    // Label for displaying the week number
+    
     
 
     override func awakeFromNib() {
