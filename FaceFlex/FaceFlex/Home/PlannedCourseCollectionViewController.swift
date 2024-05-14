@@ -31,7 +31,7 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        /// Create the Activity Ring
+        // Create the Activity Ring
         let activityRingView = HKActivityRingView(frame: CGRect(x: 0.0, y: 0.0, width: 80, height: 80))
 
         // Calculate the percentage of completed tasks
@@ -49,6 +49,10 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
 
         // Update the label to show completed tasks
         completedTaskLabel?.text = "⭐️ \(Int(completedTasks))/\(Int(totalTasks)) Tasks Completed"
+        
+
+        // Calculate the percentage of completed tasks
+       
 
  
         
@@ -131,6 +135,11 @@ class PlannedCourseCollectionViewController: UIViewController,UICollectionViewDe
 
         // Update the label to show completed tasks
         completedTaskLabel?.text = "⭐️ \(Int(completedTasks))/\(Int(totalTasks)) Tasks Completed"
+        mainView.layoutIfNeeded()
+       
+
+       
+
         
 
     }

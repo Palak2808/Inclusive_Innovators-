@@ -21,7 +21,9 @@ class WorkoutDataManager{
     
     static func getAllWorkoutDetails() -> [Workouts]{return workoutInstance}
 }
+// func getAllWorkoutDetails(){
 
+//}
 
 struct AdditionalSkincare{
     var skincareImage : String

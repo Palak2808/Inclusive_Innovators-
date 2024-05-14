@@ -51,7 +51,7 @@ class CurrentWeekJournalViewController: UIViewController, UIImagePickerControlle
         // Present camera interface
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         present(imagePicker, animated: true)
         
         print("Segue will be performed after capturing image")
